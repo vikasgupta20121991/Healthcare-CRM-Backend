@@ -1,0 +1,135 @@
+version: "3"
+services:
+  gateway:
+    build:
+      context: ./services/gateway
+      dockerfile: Dockerfile
+      args:
+        - PORT=${API_GATEWAY_PORT}
+    restart: always
+    hostname: gateway
+    env_file:
+      - .env
+    ports:
+      - ${API_GATEWAY_PORT}:${API_GATEWAY_PORT}
+      - ${API_GATEWAY_INSPECTOR_PORT}:${API_GATEWAY_INSPECTOR_PORT}
+    volumes:
+      - ./services/gateway:/var/www/gateway
+      - /var/www/gateway/node_modules
+    networks:
+      - backend
+      - frontend
+  insurance:
+    build:
+      context: ./services/insurance
+      dockerfile: Dockerfile
+      args:
+        - PORT=${INSURANCE_SERVICE_PORT}
+    restart: always
+    hostname: insurance
+    env_file:
+      - .env
+    ports:
+      - ${INSURANCE_SERVICE_PORT}:${INSURANCE_SERVICE_PORT}
+      - ${INSURANCE_INSPECTOR_PORT}:${INSURANCE_INSPECTOR_PORT}
+    volumes:
+      - ./services/insurance:/var/www/insurance
+      - /var/www/insurance/node_modules
+    networks:
+      - backend
+  pharmacy:
+    build:
+      context: ./services/pharmacy
+      dockerfile: Dockerfile
+      args:
+        - PORT=${PHARMACY_SERVICE_PORT}
+    restart: always
+    hostname: pharmacy
+    env_file:
+      - .env
+    ports:
+      - ${PHARMACY_SERVICE_PORT}:${PHARMACY_SERVICE_PORT}
+      - ${PHARMACY_INSPECTOR_PORT}:${PHARMACY_INSPECTOR_PORT}
+    volumes:
+      - ./services/pharmacy:/var/www/pharmacy
+      - /var/www/pharmacy/node_modules
+    networks:
+      - backend
+  labimagingdentaloptical:
+    build:
+      context: ./services/labimagingdentaloptical
+      dockerfile: Dockerfile
+      args:
+        - PORT=${LabImagingDentalOptical_SERVICE_PORT}
+    restart: always
+    hostname: labimagingdentaloptical
+    env_file:
+      - .env
+    ports:
+      - ${LabImagingDentalOptical_SERVICE_PORT}:${LabImagingDentalOptical_SERVICE_PORT}
+      - ${LabImagingDentalOptical_INSPECTOR_PORT}:${LabImagingDentalOptical_INSPECTOR_PORT}
+    volumes:
+      - ./services/labimagingdentaloptical:/var/www/labimagingdentaloptical
+      - /var/www/labimagingdentaloptical/node_modules
+    networks:
+      - backend
+  superadmin:
+    build:
+      context: ./services/superadmin
+      dockerfile: Dockerfile
+      args:
+        - PORT=${SUPERADMIN_SERVICE_PORT}
+    restart: always
+    hostname: superadmin
+    env_file:
+      - .env
+    ports:
+      - ${SUPERADMIN_SERVICE_PORT}:${SUPERADMIN_SERVICE_PORT}
+      - ${SUPERADMIN_INSPECTOR_PORT}:${SUPERADMIN_INSPECTOR_PORT}
+    volumes:
+      - ./services/superadmin:/var/www/superadmin
+      - /var/www/superadmin/node_modules
+    networks:
+      - backend
+  patient:
+    build:
+      context: ./services/patient
+      dockerfile: Dockerfile
+      args:
+        - PORT=${PATIENT_SERVICE_PORT}
+    restart: always
+    hostname: patient
+    env_file:
+      - .env
+    ports:
+      - ${PATIENT_SERVICE_PORT}:${PATIENT_SERVICE_PORT}
+      - ${PATIENT_INSPECTOR_PORT}:${PATIENT_INSPECTOR_PORT}
+    volumes:
+      - ./services/patient:/var/www/patient
+      - /var/www/patient/node_modules
+    networks:
+      - backend
+  hospital:
+    build:
+      context: ./services/hospital
+      dockerfile: Dockerfile
+      args:
+        - PORT=${HOSPITAL_SERVICE_PORT}
+    restart: always
+    hostname: hospital
+    env_file:
+      - .env
+    ports:
+      - ${HOSPITAL_SERVICE_PORT}:${HOSPITAL_SERVICE_PORT}
+      - ${HOSPITAL_INSPECTOR_PORT}:${HOSPITAL_INSPECTOR_PORT}
+    volumes:
+      - ./services/hospital:/var/www/hospital
+      - /var/www/hospital/node_modules
+    networks:
+      - backend
+networks:
+  backend:
+    driver: bridge
+  frontend:
+    external:
+      name: healthcare-crmnetwork

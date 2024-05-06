@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: healthcare-crm-patient-service
+  namespace: healthcare-crm-stage
+spec:
+  type: ClusterIP
+  selector:
+    app: healthcare-crm-patient-deployment
+  ports:
+  - port: 8007

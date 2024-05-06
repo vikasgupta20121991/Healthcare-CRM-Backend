@@ -1,0 +1,789 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<style>
+		/* html {
+			-webkit-print-color-adjust: exact;
+		} */
+
+		table {
+			border-collapse: collapse;
+		}
+
+		table,
+		th,
+		td {
+			border: 1px solid black;
+		}
+
+		.right-content-part {
+			display: flex;
+			justify-content: center;
+
+		}
+
+		.title-wrap {
+			display: flex;
+			align-items: baseline;
+
+		}
+
+		h1 {
+			padding: 0;
+			font-weight: 600;
+			color: #000;
+			text-transform: capitalize;
+		}
+
+		.table-wrap .table-inner {
+			border-radius: unset;
+			border-top: 2px solid #000000;
+		}
+
+		.table-wrap .table-inner table {
+			border-collapse: collapse;
+			width: 100%;
+			overflow: visible;
+			margin-top: -2px;
+		}
+
+		.table-wrap .table-inner table tr {
+			height: 50px;
+		}
+
+		.table-wrap .table-inner table th {
+			border: 2px solid #000000;
+			white-space: break-spaces;
+			text-transform: capitalize;
+			background: #548235 !important;
+			color: #ffffff;
+			font-size: 14px;
+		}
+
+		.table-wrap .table-inner table th:last-child {
+			text-align: left;
+		}
+
+		.table-wrap .table-inner table th.section_reserved {
+			background: #375623 !important;
+			color: #ffffff !important;
+		}
+
+		.table-wrap .table-inner table td {
+			border: 2px solid #000000 !important;
+			color: #000000;
+			font-size: 14px;
+			font-weight: 600;
+		}
+
+		.table-wrap .table-inner table td.signature {
+			text-align: center;
+		}
+
+		.table-wrap .table-inner table td.assignment {
+			background: #548235 !important;
+			color: #000000;
+		}
+
+		.table-wrap .table-inner table td.total_amount {
+			background: #375623 !important;
+			color: #ffffff;
+		}
+
+		.table-wrap .table-inner table td:last-child {
+			text-align: left;
+		}
+
+		.table-wrap .table-inner table tfoot .important {
+			background: #548235 !important;
+			color: #000000;
+		}
+	</style>
+</head>
+
+<body>
+	<div style="width: 85%; margin: 0 7.5%;">
+		<div style="text-align: center; padding-left: 50px;">
+			<!-- <h3>Student Report</h5> -->
+
+			<center>
+				<div class="uab">
+					<ng-template #uabcontent let-modal>
+						<div class="custome_modal">
+							<div class="modal-header">
+								<button type="button" id="closebtn" class="btn-close" aria-label="Close"
+									(click)="modal.dismiss('Cross click')">
+									<mat-icon>close</mat-icon>
+								</button>
+							</div>
+							<div class="modal-body" id="previewdiv" #previewdiv>
+								<div class="templet-main">
+									<div class="row">
+										<div class="col-md-12 col-sm-12 col-lg-3"
+											style="display: flex; justify-content: center;">
+											<div class="left-logo-part">
+												<div class="img-wrap">
+													<img src="../../../../../assets/img/uab.png" />
+												</div>
+											</div>
+										</div>
+										<div class="col-md-12 col-sm-12 col-lg-9">
+											<div class="right-content-part"
+												style="display: flex; justify-content: center;">
+												<div class="title-wrap" style="display: flex; align-items: baseline;">
+													<h1
+														style="padding: 0; font-weight: 600; color: #000; text-transform: capitalize;">
+														Health insurance - Maternity insurance</h1>
+													<div class="flex-wrapper"
+														style="display: flex; align-items: baseline;">
+														<p style="margin: 0;">Claim number :</p>
+														{claim_number}
+													</div>
+												</div>
+											</div>
+											<div class="row">
+												<div class="col-md-6 col-sm-12">
+													<div class="flex-wrapper"
+														style="display: flex; align-items: baseline;">
+														<p style="margin: 0;">Subscriber:</p>
+														<p style="margin: 0;">
+															{pri_firstName} {pri_middleName}
+															{pri_lastName}
+														</p>
+													</div>
+												</div>
+												<div class="col-md-6 col-sm-12">
+													<div class="flex-wrapper"
+														style="display: flex; align-items: baseline;">
+														<p style="margin: 0;">Police ID:</p>
+														<p style="margin: 0;">{pri_policyId}</p>
+													</div>
+												</div>
+											</div>
+										</div>
+
+										<div class="col-md-12 col-sm-12"
+											style="display: flex; justify-content: center;">
+											<div class="flex-wrapper" style="display: flex; align-items: baseline;">
+												<p style="margin: 0;">Declaration of illness or accident :</p>
+												<p style="margin: 0;">{claimDeclartion}</p>
+											</div>
+										</div>
+										<div class="col-md-12 col-sm-12"
+											style="display: flex; justify-content: center;">
+											<div class="flex-wrapper" style="display: flex; align-items: baseline;">
+												<p style="margin: 0;">
+													To be sent to the company or agent through whom the policy was
+													purchased :
+												</p>
+												<p style="margin: 0;"></p>
+											</div>
+										</div>
+
+										<div class="col-md-6 col-sm-12" style="display: flex; justify-content: center;">
+											<div class="flex-wrapper" style="display: flex; align-items: baseline;">
+												<p style="margin: 0;">Primary insured first name :</p>
+												<p style="margin: 0;">{sec_pri_firstName}</p>
+											</div>
+										</div>
+										<div class="col-md-6 col-sm-12" style="display: flex; justify-content: center;">
+											<div class="flex-wrapper" style="display: flex; align-items: baseline;">
+												<p style="margin: 0;">Last names (it means Middle and Last) :</p>
+												<p style="margin: 0;">{sec_pri_middleName} {sec_pri_lastName}</p>
+											</div>
+										</div>
+										<div class="col-md-6 col-sm-12" style="display: flex; justify-content: center;">
+											<div class="flex-wrapper" style="display: flex; align-items: baseline;">
+												<p style="margin: 0;">Patient's first name:</p>
+												<p style="margin: 0;">{pri_firstName}</p>
+											</div>
+										</div>
+
+										<div class="col-md-6 col-sm-12" style="display: flex; justify-content: center;">
+											<div class="flex-wrapper" style="display: flex; align-items: baseline;">
+												<p style="margin: 0;">Last names (it means Middle and Last) :</p>
+												<p style="margin: 0;">{pri_middleName} {pri_lastName}</p>
+											</div>
+										</div>
+										<div class="col-md-4 col-sm-12" style="display: flex; justify-content: center;">
+											<div class="flex-wrapper" style="display: flex; align-items: baseline;">
+												<p style="margin: 0;">As a secondary insured:</p>
+												<p style="margin: 0;"></p>
+											</div>
+										</div>
+										<div class="col-md-4 col-sm-12" style="display: flex; justify-content: center;">
+											<div class="flex-wrapper" style="display: flex; align-items: baseline;">
+												<p style="margin: 0;">Partner:</p>
+												<p style="margin: 0;"></p>
+											</div>
+										</div>
+										<div class="col-md-4 col-sm-12" style="display: flex; justify-content: center;">
+											<div class="flex-wrapper" style="display: flex; align-items: baseline;">
+												<p style="margin: 0;">Children</p>
+												<p style="margin: 0;"></p>
+											</div>
+										</div>
+										<div class="col-md-12 col-sm-12"
+											style="display: flex; justify-content: center;">
+											<div class="flex-wrapper" style="display: flex; align-items: baseline;">
+												<p style="margin: 0;">Date of the accident or the beginning of the
+													illness:</p>
+												<p style="margin: 0;"></p>
+											</div>
+										</div>
+										<div class="col-md-12 col-sm-12"
+											style="display: flex; justify-content: center;">
+											<div class="flex-wrapper" style="display: flex; align-items: baseline;">
+												<p style="margin: 0;">Prescribing doctor:</p>
+												<p style="margin: 0;"></p>
+											</div>
+										</div>
+										<div class="col-md-12 col-sm-12"
+											style="display: flex; justify-content: center;">
+											<div class="flex-wrapper" style="display: flex; align-items: baseline;">
+												<p style="margin: 0;">Nature of the illness or accident:</p>
+												<mat-form-field class="example-full-width">
+													<mat-label></mat-label>
+													<input matInput />
+												</mat-form-field>
+											</div>
+										</div>
+										<div class="col-md-12 col-sm-12"
+											style="display: flex; justify-content: center;">
+											<div class="flex-wrapper" style="display: flex; align-items: baseline;">
+												<p style="margin: 0;">IN CASE OF AN ACCIDENT indicate the cause and
+													circumstances:</p>
+												<mat-form-field class="example-full-width">
+													<mat-label></mat-label>
+													<input matInput />
+												</mat-form-field>
+											</div>
+										</div>
+										<div class="col-md-12 col-sm-12"
+											style="display: flex; justify-content: center;">
+											<div class="flex-wrapper" style="display: flex; align-items: baseline;">
+												<p style="margin: 0;">Name and address of the responsible third party or
+													witnesses:</p>
+												<mat-form-field class="example-full-width">
+													<mat-label></mat-label>
+													<input matInput />
+												</mat-form-field>
+											</div>
+										</div>
+										<div class="col-md-12 col-sm-12"
+											style="display: flex; justify-content: center;">
+											<div class="flex-wrapper" style="display: flex; align-items: baseline;">
+												<p style="margin: 0;">Probable duration of illness or disability in case
+													of accident:</p>
+												<mat-form-field class="example-full-width">
+													<mat-label></mat-label>
+													<input matInput />
+												</mat-form-field>
+											</div>
+										</div>
+										<div class="col-md-12 col-sm-12" style="text-align: center;">
+											<h1 class="uab_title">
+												part to be filled in by the practitioners or the hospital, the pharmacy
+												and the laboratory
+											</h1>
+										</div>
+
+									</div>
+
+									<!-- ---------------ACTS AND MEDICAL FEES table--------------- -->
+									<div class="table-wrap">
+										<div class="table-inner" #TABLE>
+											<table mat-table [dataSource]="medical_fees_dataSource"
+												class="mat-elevation-z8">
+												<!-- Note that these columns can be defined in any order.
+													The actual rendered columns are set as a property on the row definition" -->
+
+												<ng-container matColumnDef="maintitle">
+													<th mat-header-cell *matHeaderCellDef [attr.colspan]="7">
+														acts and medical fees
+													</th>
+												</ng-container>
+
+												<!-- Date of medical procedures duplicate Column -->
+												<ng-container matColumnDef="dateofmedicalproceduresduplicate">
+													<th mat-header-cell *matHeaderCellDef
+														[ngStyle]="{ display: 'none' }">
+														Date of medical procedures duplicate
+													</th>
+													<td mat-cell *matCellDef="let element">
+														<!-- data -->
+													</td>
+												</ng-container>
+
+												<ng-container matColumnDef="dateofmedicalprocedures">
+													<th mat-header-cell *matHeaderCellDef [attr.rowspan]="2">
+														Date of medical procedures
+													</th>
+												</ng-container>
+
+												<!-- Designation of the cates Duplicate Column-->
+												<ng-container matColumnDef="designationofthecatesduplicate">
+													<th mat-header-cell *matHeaderCellDef
+														[ngStyle]="{ display: 'none' }">
+														Designation of the cates Duplicate
+													</th>
+													<td mat-cell *matCellDef="let element">
+														<!-- data -->
+													</td>
+												</ng-container>
+												<ng-container matColumnDef="designationofthecates">
+													<th mat-header-cell *matHeaderCellDef [attr.rowspan]="2">
+														<span>Designation of the cates<br />
+															C: Consultation<br />
+															V: Visit P C. or K according to the<br />
+															nomenclature</span>
+													</th>
+												</ng-container>
+
+												<!--Fees  group -->
+												<ng-container matColumnDef="header-row-second-group">
+													<th mat-header-cell *matHeaderCellDef [attr.colspan]="2">
+														Fees
+													</th>
+												</ng-container>
+
+												<!-- Total Amount Column -->
+												<ng-container matColumnDef="totalamount">
+													<th mat-header-cell *matHeaderCellDef>Total amount</th>
+													<td mat-cell *matCellDef="let element">
+														<!-- data -->
+													</td>
+												</ng-container>
+
+												<!-- Amount paid by the insured Column -->
+												<ng-container matColumnDef="amoutpaidbyinsured">
+													<th mat-header-cell *matHeaderCellDef>
+														Amount paid by the insured
+													</th>
+													<td mat-cell *matCellDef="let element">
+														<!-- data -->
+													</td>
+												</ng-container>
+
+												<!-- Signature of the doctor attesting to the payment of the medical acts duplicate  Column -->
+												<ng-container matColumnDef="signatureofthedoctorduplicate">
+													<th mat-header-cell *matHeaderCellDef
+														[ngStyle]="{ display: 'none' }">
+														Signature of the doctor attesting to the payment of the
+														medical acts duplicate
+													</th>
+													<td mat-cell *matCellDef="let element">
+														<!-- data -->
+													</td>
+												</ng-container>
+
+												<ng-container matColumnDef="signatureofthedoctor">
+													<th mat-header-cell *matHeaderCellDef [attr.rowspan]="2">
+														Signature of the doctor attesting to the payment of the
+														medical acts
+													</th>
+												</ng-container>
+
+												<!-- Issuing a prescription Column -->
+												<ng-container matColumnDef="issuingprescriptionduplicate">
+													<th mat-header-cell *matHeaderCellDef
+														[ngStyle]="{ display: 'none' }">
+														Issuing a prescription duplicate
+													</th>
+													<td mat-cell *matCellDef="let element">
+														<!-- data -->
+													</td>
+												</ng-container>
+
+												<ng-container matColumnDef="issuingprescription">
+													<th mat-header-cell *matHeaderCellDef [attr.rowspan]="2">
+														Issuing a prescription
+													</th>
+												</ng-container>
+
+												<!-- Dotor stamp Column -->
+												<ng-container matColumnDef="dotorstampduplicate">
+													<th mat-header-cell *matHeaderCellDef
+														[ngStyle]="{ display: 'none' }">
+														Dotor stamp duplicate
+													</th>
+													<td mat-cell *matCellDef="let element">
+														<!-- data -->
+													</td>
+												</ng-container>
+
+												<ng-container matColumnDef="dotorstamp">
+													<th mat-header-cell *matHeaderCellDef [attr.rowspan]="2">
+														Dotor stamp
+													</th>
+												</ng-container>
+
+												<tr mat-header-row *matHeaderRowDef="['maintitle']"></tr>
+												<tr mat-header-row *matHeaderRowDef="[
+													'dateofmedicalprocedures',
+													'designationofthecates',
+													'header-row-second-group',
+													'signatureofthedoctor',
+													'issuingprescription',
+													'dotorstamp'
+												]"></tr>
+												<tr mat-header-row *matHeaderRowDef="medical_fees_disply_Columns"></tr>
+												<tr mat-row *matRowDef="let row; columns: medical_fees_disply_Columns">
+												</tr>
+											</table>
+										</div>
+									</div>
+
+									<!-- ---------------EXECUTION OF PRESCRIPTIONS table--------------- -->
+									<div class="table-wrap">
+										<div class="table-inner" #TABLE>
+											<table mat-table [dataSource]="dataExecution" class="mat-elevation-z8">
+												<!-- Note that these columns can be defined in any order.
+													The actual rendered columns are set as a property on the row definition" -->
+
+												<ng-container matColumnDef="Execution">
+													<th mat-header-cell *matHeaderCellDef [attr.colspan]="6">
+														execution of prescriptions
+													</th>
+												</ng-container>
+
+												<!-- 'MedicINES prescribed by the doctor Column -->
+												<ng-container matColumnDef="prescribed">
+													<th mat-header-cell *matHeaderCellDef
+														[ngStyle]="{ display: 'none' }">
+														Prescribed by the doctor
+													</th>
+													<td mat-cell *matCellDef="let element">
+														<!-- data -->
+													</td>
+												</ng-container>
+												<ng-container matColumnDef="Prescrib">
+													<th mat-header-cell *matHeaderCellDef [attr.rowspan]="2">
+														MedicINES prescribed by the doctor
+													</th>
+												</ng-container>
+
+												<!--  Quantity Column-->
+												<ng-container matColumnDef="quantity">
+													<th mat-header-cell *matHeaderCellDef
+														[ngStyle]="{ display: 'none' }">
+														Quantity
+													</th>
+													<td mat-cell *matCellDef="let element">
+														<!-- data -->
+													</td>
+												</ng-container>
+												<ng-container matColumnDef="qty">
+													<th mat-header-cell *matHeaderCellDef [attr.rowspan]="2">
+														Quantity
+													</th>
+												</ng-container>
+
+												<!--  Medicines delivered Column-->
+												<ng-container matColumnDef="medicinesdelivered">
+													<th mat-header-cell *matHeaderCellDef
+														[ngStyle]="{ display: 'none' }">
+														Medicines delivered
+													</th>
+													<td mat-cell *matCellDef="let element">
+														<!-- data -->
+													</td>
+												</ng-container>
+												<ng-container matColumnDef="Medicinesdelivere">
+													<th mat-header-cell *matHeaderCellDef [attr.rowspan]="2">
+														<span>Medicines delivered <br />
+															(to be completed by the pharmacist)</span>
+													</th>
+												</ng-container>
+
+												<!--  Total cost Column-->
+												<ng-container matColumnDef="totalcost">
+													<th mat-header-cell *matHeaderCellDef
+														[ngStyle]="{ display: 'none' }">
+														No
+													</th>
+													<td mat-cell *matCellDef="let element">
+														<!-- data -->
+													</td>
+												</ng-container>
+												<ng-container matColumnDef="total">
+													<th mat-header-cell *matHeaderCellDef [attr.rowspan]="2">
+														Total cost
+													</th>
+												</ng-container>
+
+												<!--To be paid by the insured Column -->
+												<ng-container matColumnDef="paidbyinsured">
+													<th mat-header-cell *matHeaderCellDef
+														[ngStyle]="{ display: 'none' }">
+														paidbyinsured
+													</th>
+													<td mat-cell *matCellDef="let element">
+														<!-- data -->
+													</td>
+												</ng-container>
+												<ng-container matColumnDef="paidbyinsure">
+													<th mat-header-cell *matHeaderCellDef [attr.rowspan]="2">
+														To be paid by the insured
+													</th>
+												</ng-container>
+
+												<!-- Signature of the doctor attesting to the payment of the medical acts  Column -->
+												<ng-container matColumnDef="signaturepharmacist">
+													<th mat-header-cell *matHeaderCellDef
+														[ngStyle]="{ display: 'none' }">
+														signaturepharmacist
+													</th>
+													<td mat-cell *matCellDef="let element">
+														<!-- data -->
+													</td>
+												</ng-container>
+												<ng-container matColumnDef="signaturepharmacis">
+													<th mat-header-cell *matHeaderCellDef [attr.rowspan]="2">
+														Stamp and signature of the pharmacist
+													</th>
+												</ng-container>
+												<ng-container matColumnDef="disclaimer">
+													<td mat-footer-cell *matFooterCellDef colspan="2">
+														Please note that the cost of items displayed are completely and
+														totally made up.
+													</td>
+												</ng-container>
+												<ng-container matColumnDef="blankCell">
+													<td mat-footer-cell *matFooterCellDef></td>
+												</ng-container>
+												<ng-container matColumnDef="total_cell">
+													<td mat-footer-cell *matFooterCellDef colspan="2">Total</td>
+												</ng-container>
+
+												<tr mat-header-row *matHeaderRowDef="['Execution']"></tr>
+												<tr mat-header-row *matHeaderRowDef="[
+													'Prescrib',
+													'qty',
+													'Medicinesdelivere',
+													'total',
+													'paidbyinsure',
+													'signaturepharmacis'
+												]"></tr>
+												<tr mat-footer-row *matFooterRowDef="
+													[
+														'blankCell',
+														'total_cell',
+														'blankCell',
+														'blankCell',
+														'blankCell'
+													];
+													sticky: true
+												"></tr>
+												<tr mat-header-row *matHeaderRowDef="dataExecution_displayedColumns">
+												</tr>
+												<tr mat-row
+													*matRowDef="let row; columns: dataExecution_displayedColumns"></tr>
+											</table>
+										</div>
+									</div>
+
+
+									<!-- ---------------ANALYSIS, EXAMINATION, X-RAY table--------------- -->
+									<div class="table-wrap">
+										<div class="table-inner" #TABLE>
+											<table mat-table [dataSource]="data_analysis_examination_x_ray"
+												class="mat-elevation-z8">
+												<!--- Note that these columns can be defined in any order.
+										The actual rendered columns are set as a property on the row definition" -->
+
+												<ng-container matColumnDef="Execution">
+													<th mat-header-cell *matHeaderCellDef [attr.colspan]="6">
+														analysis, examination, x-ray
+													</th>
+												</ng-container>
+
+												<!-- 'MedicINES prescribed by the doctor Column -->
+												<ng-container matColumnDef="prescribed">
+													<th mat-header-cell *matHeaderCellDef
+														[ngStyle]="{ display: 'none' }">
+														<!-- title -->
+													</th>
+													<td mat-cell *matCellDef="let element">
+														<!-- data -->
+													</td>
+												</ng-container>
+												<ng-container matColumnDef="Prescrib">
+													<th mat-header-cell *matHeaderCellDef [attr.rowspan]="2">
+														&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;
+														&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp;
+														&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+														&nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;
+														&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+														&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+														&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;
+														&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+													</th>
+												</ng-container>
+
+												<!--  Total cost Column-->
+												<ng-container matColumnDef="totalcost">
+													<th mat-header-cell *matHeaderCellDef
+														[ngStyle]="{ display: 'none' }">
+														No
+													</th>
+													<td mat-cell *matCellDef="let element">
+														<!-- data -->
+													</td>
+												</ng-container>
+												<ng-container matColumnDef="total">
+													<th mat-header-cell *matHeaderCellDef [attr.rowspan]="2">
+														Total cost
+													</th>
+												</ng-container>
+
+												<!--To be paid by the insured Column -->
+												<ng-container matColumnDef="paidbyinsured">
+													<th mat-header-cell *matHeaderCellDef
+														[ngStyle]="{ display: 'none' }">
+														paidbyinsured
+													</th>
+													<td mat-cell *matCellDef="let element">
+														<!-- data -->
+													</td>
+												</ng-container>
+
+												<ng-container matColumnDef="paidbyinsure">
+													<th mat-header-cell *matHeaderCellDef [attr.rowspan]="2">
+														To be paid by the insured
+													</th>
+												</ng-container>
+
+												<!-- Signature of the doctor attesting to the payment of the medical acts  Column -->
+												<ng-container matColumnDef="signaturepharmacist">
+													<th mat-header-cell *matHeaderCellDef
+														[ngStyle]="{ display: 'none' }">
+														signaturepharmacist
+													</th>
+													<td mat-cell *matCellDef="let element">
+														<!-- data -->
+													</td>
+												</ng-container>
+
+												<ng-container matColumnDef="signaturepharmacis">
+													<th mat-header-cell *matHeaderCellDef [attr.rowspan]="2">
+														Stamp and signature of the pharmacist
+													</th>
+												</ng-container>
+
+												<tr mat-header-row *matHeaderRowDef="['Execution']"></tr>
+												<tr mat-header-row *matHeaderRowDef="[
+					  'Prescrib',
+					  'total',
+					  'paidbyinsure',
+					  'signaturepharmacis'
+					]"></tr>
+												<tr mat-header-row
+													*matHeaderRowDef="analysis_examination_x_ray_displayedColumns">
+												</tr>
+												<tr mat-row *matRowDef="
+					  let row;
+					  columns: analysis_examination_x_ray_displayedColumns
+					"></tr>
+											</table>
+
+											<!-- Copyright 2018 Google Inc. All Rights Reserved.
+									Use of this source code is governed by an MIT-style license that
+									can be found in the LICENSE file at http://angular.io/license -->
+										</div>
+									</div>
+
+									<!-- ---------------NOMENCLATURE table--------------- -->
+									<div class="table-wrap">
+										<div class="table-inner" #TABLE>
+											<table mat-table [dataSource]="data_nomenclature" class="mat-elevation-z8">
+												<ng-container matColumnDef="Execution">
+													<th mat-header-cell *matHeaderCellDef [attr.colspan]="5">
+														the practitioner indicates the tooth treated, designates the
+														procedure performed using the indices and coefficients of
+														the nomenclature
+													</th>
+												</ng-container>
+
+												<!-- 'MedicINES prescribed by the doctor Column -->
+												<ng-container matColumnDef="prescribed">
+													<th mat-header-cell *matHeaderCellDef></th>
+													<td mat-cell *matCellDef="let element">
+														<img src="../../../../../assets/img/template1.png" />
+													</td>
+												</ng-container>
+
+												<!-- 'MedicINES prescribed by the doctor Column -->
+												<ng-container matColumnDef="prescribed1">
+													<th mat-header-cell *matHeaderCellDef [attr.rowspan]="2">
+														&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;
+														&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+													</th>
+													<td mat-cell *matCellDef="let element">
+														<!-- data -->
+													</td>
+												</ng-container>
+
+												<!--  Total cost Column-->
+												<ng-container matColumnDef="totalcost">
+													<th mat-header-cell *matHeaderCellDef [attr.rowspan]="2">
+														DATE
+													</th>
+													<td mat-cell *matCellDef="let element">
+														<!-- data -->
+													</td>
+												</ng-container>
+
+												<!--To be paid by the insured Column -->
+												<ng-container matColumnDef="paidbyinsured">
+													<th mat-header-cell *matHeaderCellDef [attr.rowspan]="2">
+														TEETH
+													</th>
+													<td mat-cell *matCellDef="let element">
+														<!-- data -->
+													</td>
+													<td mat-footer-cell *matFooterCellDef><span>Total</span></td>
+												</ng-container>
+
+												<!-- Blank cell Column -->
+												<ng-container matColumnDef="blankCell">
+													<td mat-footer-cell *matFooterCellDef></td>
+												</ng-container>
+
+												<!-- Signature of the doctor attesting to the payment of the medical acts  Column -->
+												<ng-container matColumnDef="signaturepharmacist">
+													<th mat-header-cell *matHeaderCellDef [attr.rowspan]="2">
+														Coefficient
+													</th>
+													<td mat-cell *matCellDef="let element">
+														<!-- data -->
+													</td>
+												</ng-container>
+
+												<tr mat-header-row *matHeaderRowDef="['Execution']"></tr>
+												<tr mat-header-row *matHeaderRowDef="nomenclaturey_displayedColumns">
+												</tr>
+												<tr mat-row
+													*matRowDef="let row; columns: nomenclaturey_displayedColumns">
+												</tr>
+												<tr mat-footer-row *matFooterRowDef="[
+					  'blankCell',
+					  'blankCell',
+					  'blankCell',
+					  'paidbyinsured'
+					]"></tr>
+											</table>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</ng-template>
+				</div>
+			</center>
+		</div>
+	</div>
+</body>
+
+</html>

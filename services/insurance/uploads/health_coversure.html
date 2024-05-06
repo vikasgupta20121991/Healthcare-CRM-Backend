@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+	<style>
+		/* html {
+			-webkit-print-color-adjust: exact;
+		} */
+
+		table {
+			border-collapse: collapse;
+		}
+
+		table,
+		th,
+		td {
+			border: 1px solid black;
+		}
+
+		.right-content-part {
+			display: flex;
+			justify-content: center;
+
+		}
+
+		.title-wrap {
+			display: flex;
+			align-items: baseline;
+
+		}
+
+		h1 {
+			padding: 0;
+			font-weight: 600;
+			color: #000;
+			text-transform: capitalize;
+		}
+
+		.table-wrap .table-inner {
+			border-radius: unset;
+			border-top: 2px solid #000000;
+		}
+
+		.table-wrap .table-inner table {
+			border-collapse: collapse;
+			width: 100%;
+			overflow: visible;
+			margin-top: -2px;
+		}
+
+		.table-wrap .table-inner table tr {
+			height: 50px;
+		}
+
+		.table-wrap .table-inner table th {
+			border: 2px solid #000000;
+			white-space: break-spaces;
+			text-transform: capitalize;
+			background: #548235 !important;
+			color: #ffffff;
+			font-size: 14px;
+		}
+
+		.table-wrap .table-inner table th:last-child {
+			text-align: left;
+		}
+
+		.table-wrap .table-inner table th.section_reserved {
+			background: #375623 !important;
+			color: #ffffff !important;
+		}
+
+		.table-wrap .table-inner table td {
+			border: 2px solid #000000 !important;
+			color: #000000;
+			font-size: 14px;
+			font-weight: 600;
+		}
+
+		.table-wrap .table-inner table td.signature {
+			text-align: center;
+		}
+
+		.table-wrap .table-inner table td.assignment {
+			background: #548235 !important;
+			color: #000000;
+		}
+
+		.table-wrap .table-inner table td.total_amount {
+			background: #375623 !important;
+			color: #ffffff;
+		}
+
+		.table-wrap .table-inner table td:last-child {
+			text-align: left;
+		}
+
+		.table-wrap .table-inner table tfoot .important {
+			background: #548235 !important;
+			color: #000000;
+		}
+	</style>
+</head>
+
+<body>
+	<div style="width: 85%; margin: 0 7.5%;">
+		<div style="text-align: center; padding-left: 50px;">
+			<!-- <h3>Student Report</h3> -->
+		</div>
+		<div class="health_coversure">
+			<ng-template #coversure let-modal>
+				<div class="custome_modal">
+					<div class="modal-header">
+						<button type="button" id="closebtn" class="btn-close" aria-label="Close"
+							(click)="modal.dismiss('Cross click')">
+							<mat-icon>close</mat-icon>
+						</button>
+					</div>
+					<div class="modal-body" id="previewdiv" #previewdiv>
+						<div class="templet-main">
+							<div class="row">
+								<div class="col-md-3 col-sm-12">
+									<div class="left-logo-part" style="display: block; text-align: center;">
+										<div class="img-wrap" style="padding-bottom: 20px;">
+											<img src="../../../services/insurance/uploads/coversure.png" />
+										</div>
+									</div>
+								</div>
+
+								<div class="col-md-9 col-sm-12">
+									<div class="right-content-part" style="display: block; text-align: center;">
+										<div class="title-wrap">
+											<h1 style="font-weight: 600; color: #000; text-transform: capitalize;">
+												HEALTH COVERSURE</h1>
+										</div>
+									</div>
+									<div class="row">
+										<div class="col-md-6 col-sm-12">
+											<div
+												style="display: flex; align-items: baseline; flex-wrap: nowrap; margin: 0; color: #000; font-size: 16px; white-space: nowrap;">
+												<p>Care sheet:</p>
+												<mat-form-field class="example-full-width" style="width: 100%;">
+													<mat-label></mat-label>
+													<input matInput />
+												</mat-form-field>
+											</div>
+										</div>
+										<div class="col-md-6 col-sm-12">
+											<div style="display: flex; align-items: baseline; flex-wrap: nowrap;">
+												<p>Claim number</p>
+												{claim_number}
+											</div>
+										</div>
+									</div>
+								</div>
+
+								<div class="col-md-12 col-sm-12">
+									<div class="flex-wrapper"
+										style="display: flex; justify-content: center; margin: 10px 0;">
+										<h1
+											style="margin: 0; color: #000; font-size: 16px; text-transform: capitalize;">
+											Doctor / Clinic</h1>
+									</div>
+								</div>
+
+								<div class="col-sm-12 col-md-4 col-lg-2">
+									<div class="flex-wrapper"
+										style="display: flex; align-items: baseline; flex-wrap: nowrap;">
+										<p style="margin: 0; color: #000; font-size: 16px; white-space: nowrap;">Assured
+											:</p>
+										<div class="example-full-width"></div>
+									</div>
+								</div>
+
+								<div class="col-sm-12 col-md-4 col-lg-5">
+									<div class="flex-wrapper"
+										style="display: flex; align-items: baseline; flex-wrap: nowrap;">
+										<p style="margin: 0; color: #000; font-size: 16px; white-space: nowrap;">Name :
+										</p>
+										{pri_firstName} {pri_middleName} {pri_lastName}
+									</div>
+								</div>
+
+								<div class="col-sm-12 col-md-4 col-lg-5">
+									<div class="flex-wrapper"
+										style="display: flex; align-items: baseline; flex-wrap: nowrap;">
+										<p style="margin: 0; color: #000; font-size: 16px; white-space: nowrap;">First
+											name:</p>
+										{pri_firstName}
+									</div>
+								</div>
+
+								<div class="col-md-4 col-sm-12">
+									<div class="flex-wrapper"
+										style="display: flex; align-items: baseline; flex-wrap: nowrap;">
+										<p style="margin: 0; color: #000; font-size: 16px; white-space: nowrap;">Police
+											Number:</p>
+										{pri_policyId}
+									</div>
+								</div>
+
+								<div class="col-md-4 col-sm-12">
+									<div class="flex-wrapper"
+										style="display: flex; align-items: baseline; flex-wrap: nowrap;">
+										<p style="margin: 0; color: #000; font-size: 16px; white-space: nowrap;">
+											Insurance ID:</p>
+										{pri_insuranceId}
+									</div>
+								</div>
+
+								<div class="col-md-4 col-sm-12">
+									<div class="flex-wrapper"
+										style="display: flex; align-items: baseline; flex-wrap: nowrap;">
+										<p style="margin: 0; color: #000; font-size: 16px; white-space: nowrap;">Age:
+										</p>
+										{pri_age}
+									</div>
+								</div>
+
+								<div class="col-md-12 col-sm-12">
+									<div class="flex-wrapper"
+										style="display: flex; align-items: baseline; flex-wrap: nowrap;">
+										<p style="margin: 0; color: #000; font-size: 16px; white-space: nowrap;">Code
+											Assignment:</p>
+										{code_assignment}
+									</div>
+								</div>
+
+							</div>
+
+							<!-- ---------------ACTS AND MEDICAL FEES table--------------- -->
+							<div class="table-wrap" style="border-radius: unset;">
+								<div class="table-inner" #TABLE" style="border-radius: unset;">
+									<table
+										style="border-collapse: collapse; width: 100%; overflow: visible; margin: 30px 0;">
+										<thead>
+											<tr>
+												<th colspan="4"
+													style="text-align: center; border: 1px solid #B6C8D6; white-space: break-spaces; text-transform: capitalize;">
+													6. Medicines prescribed (Section reserved for the prescribing
+													Doctor)
+												</th>
+												<th class="section_reserved" colspan="1"
+													style="text-align: center; border: 1px solid #B6C8D6; white-space: break-spaces; text-transform: capitalize;">
+													Section reserved for the pharmacist
+												</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td>No:</td>
+												<td>prescription</td>
+												<td></td>
+												<td>amount</td>
+												<td>paid Insured</td>
+											</tr>
+											<ng-container *ngIf="claimMedicine.length > 0">
+												<ng-container *ngFor="let med of claimMedicine; let i = index">
+													<tr>
+														<td>{{ i + 1 }}</td>
+														<td>{{ med["medicineName"] }}</td>
+														<td>{{ med["totalCost"] }}</td>
+														<td></td>
+														<td>{{ med["requestAmount"] }}</td>
+													</tr>
+												</ng-container>
+											</ng-container>
+										</tbody>
+										<tfoot>
+											<tr>
+												<td rowspan="3" colspan="2">
+													<p style="white-space: break-spaces;"></p>
+												</td>
+												<td colspan="2">Total amount:</td>
+												<td>{{ totalCostOfAllMedicine }}</td>
+											</tr>
+											<tr>
+												<td colspan="2">To be paid by the patient (%)</td>
+												<td>{{ totalCoPayment }}</td>
+											</tr>
+											<tr>
+												<td colspan="2">To be paid by Insured</td>
+												<td>{{ totalRequestedAmount }}</td>
+											</tr>
+											<tr>
+												<td class="signature" rowspan="2" colspan="2"
+													style="width: 50%; text-align: center; border: 1px solid #B6C8D6;">
+													Signature and stamp Prescribing Doctor
+												</td>
+												<td class="signature" rowspan="2" colspan="4"
+													style="width: 50%; text-align: center; border: 1px solid #B6C8D6;">
+													<div>
+														<p *ngIf="pharm_signature!=''">
+															<img src="{pharm_signature}"
+																style="width: 150px; height: 70px;" />
+														</p>
+														<p>Signature and stamp Pharmacist</p>
+													</div>
+												</td>
+											</tr>
+											<tr>
+												<td style="display: none"></td>
+												<td style="display: none"></td>
+												<td style="display: none"></td>
+											</tr>
+										</tfoot>
+									</table>
+								</div>
+							</div>
+
+
+							<div class="row bottom_bar" style="display: flex; justify-content: flex-end;">
+								<div class="col-sm-12 col-md-12 col-lg-2">
+									<div class="flex-wrapper"
+										style="display: flex; align-items: baseline; flex-wrap: nowrap;">
+										<p style="margin: 0; color: #000; font-size: 16px; white-space: nowrap;">Date:
+										</p>
+										{ClaimDataeSignaturedate}
+									</div>
+								</div>
+								<div class="col-sm-12 col-md-12 col-lg-5">
+									<div class="flex-wrapper"
+										style="display: flex; align-items: baseline; flex-wrap: nowrap;">
+										<p style="margin: 0; color: #000; font-size: 16px; white-space: nowrap;">Name
+											and first name of doctor:</p>
+										{priscriberFullName}
+									</div>
+								</div>
+								<div class="col-sm-12 col-md-12 col-lg-5">
+									<div class="flex-wrapper"
+										style="display: flex; align-items: baseline; flex-wrap: nowrap;">
+										<p style="margin: 0; color: #000; font-size: 16px; white-space: nowrap;">
+											Signature & Insured:</p>
+									</div>
+								</div>
+								<div class="col-sm-12 col-md-12 col-lg-5">
+									<div class="flex-wrapper"
+										style="display: flex; align-items: baseline; flex-wrap: nowrap;">
+										<p style="margin: 0; color: #000; font-size: 16px; white-space: nowrap;">
+											<img src="{doc_sign_stamp}" style="width: 150px; height: 70px;" />
+										</p>
+										<p style="margin: 0; color: #000; font-size: 16px; white-space: nowrap;">
+											Date,Signature and stamp:</p>
+									</div>
+								</div>
+							</div>
+
+						</div>
+					</div>
+				</div>
+			</ng-template>
+		</div>
+	</div>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</body>
+
+</html>

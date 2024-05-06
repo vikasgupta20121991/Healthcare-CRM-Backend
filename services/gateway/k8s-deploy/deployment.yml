@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: healthcare-crm-gateway-deployment
+  namespace: healthcare-crm-stage
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: healthcare-crm-gateway-deployment
+  template:
+    metadata:
+      labels:
+        app: healthcare-crm-gateway-deployment
+    spec:
+      containers:
+      - name: healthcare-crm-gateway-deployment
+        image: aravindarivi1997/healthcare-crmbackend-gateway
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "200m"
+        ports:
+        - containerPort: 8005

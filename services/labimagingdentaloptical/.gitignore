@@ -1,0 +1,10 @@
+package-lock.json
+node_modules/**/*
+npm-debug.log
+.DS_Store
+
+
+#Custom
+/node_modules
+/public/*
+.env

@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<style>
+		/* html {
+			-webkit-print-color-adjust: exact;
+		} */
+
+		table {
+			border-collapse: collapse;
+		}
+
+		table,
+		th,
+		td {
+			border: 1px solid black;
+		}
+
+		.right-content-part {
+			display: flex;
+			justify-content: center;
+
+		}
+
+		.title-wrap {
+			display: flex;
+			align-items: baseline;
+
+		}
+
+		h1 {
+			padding: 0;
+			font-weight: 600;
+			color: #000;
+			text-transform: capitalize;
+		}
+
+		.table-wrap .table-inner {
+			border-radius: unset;
+			border-top: 2px solid #000000;
+		}
+
+		.table-wrap .table-inner table {
+			border-collapse: collapse;
+			width: 100%;
+			overflow: visible;
+			margin-top: -2px;
+		}
+
+		.table-wrap .table-inner table tr {
+			height: 50px;
+		}
+
+		.table-wrap .table-inner table th {
+			border: 2px solid #000000;
+			white-space: break-spaces;
+			text-transform: capitalize;
+			background: #548235 !important;
+			color: #ffffff;
+			font-size: 14px;
+		}
+
+		.table-wrap .table-inner table th:last-child {
+			text-align: left;
+		}
+
+		.table-wrap .table-inner table th.section_reserved {
+			background: #375623 !important;
+			color: #ffffff !important;
+		}
+
+		.table-wrap .table-inner table td {
+			border: 2px solid #000000 !important;
+			color: #000000;
+			font-size: 14px;
+			font-weight: 600;
+		}
+
+		.table-wrap .table-inner table td.signature {
+			text-align: center;
+		}
+
+		.table-wrap .table-inner table td.assignment {
+			background: #548235 !important;
+			color: #000000;
+		}
+
+		.table-wrap .table-inner table td.total_amount {
+			background: #375623 !important;
+			color: #ffffff;
+		}
+
+		.table-wrap .table-inner table td:last-child {
+			text-align: left;
+		}
+
+		.table-wrap .table-inner table tfoot .important {
+			background: #548235 !important;
+			color: #000000;
+		}
+	</style>
+</head>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+<body>
+	<div style="width: 85%; margin: 0 7.5%;">
+		<div>
+			<div class="templet-main">
+				<div class="row">
+					<div class="top_part">
+						<div style="display: flex; flex-wrap: wrap;">
+							<div style="flex: 1; max-width: 25%;">
+								<!-- <div style="padding: 10px;"> -->
+									<div style="text-align: center;">
+										<div style="max-width: 100%;">
+											<img src="../../insurance/uploads/maado.png" style="max-width: 100%;" />
+										</div>
+									</div>
+								<!-- </div> -->
+							</div>
+							<div style="flex: 3; max-width: 75%;">
+								<div style="padding: 10px;">
+									<div>
+										<h2
+											style="font-weight: 600; color: #000; text-transform: capitalize; margin: 0 0 30px;">
+											Medical care form</h2>
+										<div style="display: flex; align-items: center;">
+											<p
+												style="margin: 0; color: #000; font-size: 14px; font-weight: 600; white-space: nowrap;">
+												Claim number :</p>
+											{claim_number}
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+
+					</div>
+
+					<div class="bottom_part">
+						<!-- Maado table -->
+						<div class="table-wrap">
+							<div class="table-inner">
+								<table
+									style="border-collapse: collapse; width: 100%; overflow: visible; margin-top: -2px;">
+									<thead>
+										<tr>
+											<th
+												style="width: 50%; border: 2px solid #000; padding: 8px; text-align: center; background: #548235 !important; color: #ffffff; font-size: 14px;">
+												1. Health insurance system information</th>
+											<th style="background-color: red;">
+												Filling instructions</th>
+										</tr>
+									</thead>
+									<!-- Add the rest of your table content here -->
+									<tbody>
+										<tr>
+											<td style="width: 50%">SAM code:</td>
+											<td style="width: 50%">Write legibly</td>
+										</tr>
+										<tr>
+											<td style="width: 50%">SAM:</td>
+											<td style="width: 50%">ID obligatoire</td>
+										</tr>
+									</tbody>
+								</table>
+
+								<table>
+									<thead>
+										<tr>
+											<th colspan="3">
+												2. Patient information & Access to health care
+												policy
+											</th>
+											<th colspan="3">3. Infos reference medical center
+											</th>
+										</tr>
+									</thead>
+
+									<tbody>
+										<tr>
+											<td rowspan="2">Primary insured</td>
+											<td>Matricule:</td>
+											<td></td>
+											<td colspan="3">Date and Time:</td>
+										</tr>
+										<tr>
+											<td>Nom:</td>
+											<td>
+												{pri_firstName} {pri_middleName}
+												{pri_lastName}
+											</td>
+											<td colspan="3">Agreed healthcare network:</td>
+										</tr>
+										<tr>
+											<td rowspan="5">Patient</td>
+											<td>Carte ID:</td>
+											<td>{pri_cardId}</td>
+											<td colspan="3"></td>
+										</tr>
+										<tr>
+											<td colspan="1">Full Name (first, middle, last):
+											</td>
+											<td>
+												{pri_firstName} {pri_middleName}
+												{pri_lastName}
+											</td>
+											<td colspan="3"></td>
+										</tr>
+										<tr>
+											<td colspan="1">Age:</td>
+											<td>{pri_age}</td>
+											<td colspan="3">
+												Prescribing Doctor / orientation:
+												{priscriberFullName}
+											</td>
+										</tr>
+										<tr>
+											<td colspan="1">Marital Status :</td>
+											<td>{marital_status}</td>
+											<td colspan="3"></td>
+										</tr>
+										<tr>
+											<td colspan="1">Gender :</td>
+											<td>{pri_gender}</td>
+											<td colspan="3"></td>
+										</tr>
+
+										<tr>
+											<th colspan="6">4. Details of medical procedures:
+											</th>
+										</tr>
+
+										<tr>
+											<td>Date</td>
+											<td>Code</td>
+											<td>Designation (Medical acts)</td>
+											<td>Coefficient</td>
+											<td>Rate</td>
+											<td>Total Cost</td>
+										</tr>
+										<tr>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+										</tr>
+										<tr>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+										</tr>
+										<tr>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+										</tr>
+									</tbody>
+									<tfoot>
+										<tr>
+											<td colspan="3" rowspan="2" class="important">
+												<u>Important:</u> The validity of this form
+												cannot
+												exceed 5 days from the date of issue
+											</td>
+											<td class="total_amount" colspan="2" style="text-align: right">
+												Total amount:
+											</td>
+											<td></td>
+										</tr>
+										<tr>
+											<td colspan="2" style="text-align: right">
+												To be paid by the patient
+											</td>
+											<td></td>
+										</tr>
+										<tr>
+											<td colspan="2" class="assignment">Assignment code
+											</td>
+											<td colspan="1"></td>
+											<td colspan="2" style="text-align: right">
+												To be paid by the insurance company
+											</td>
+											<td></td>
+										</tr>
+									</tfoot>
+								</table>
+								<table>
+									<thead>
+										<tr>
+											<th colspan="6">
+												5. Details of Paramedical procedures:
+											</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td>Date</td>
+											<td>Code</td>
+											<td>Designation (Medical acts)</td>
+											<td>Coefficient</td>
+											<td>Rate</td>
+											<td>Total Cost</td>
+										</tr>
+										<tr>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+										</tr>
+										<tr>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+										</tr>
+										<tr>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+										</tr>
+									</tbody>
+									<tfoot>
+										<tr>
+											<td colspan="3" rowspan="2" class="important">
+												<u>Important:</u> The validity of this form
+												cannot
+												exceed 5 days from the date of issue
+											</td>
+											<td class="total_amount" colspan="2" style="text-align: right">
+												Total amount:
+											</td>
+											<td></td>
+										</tr>
+										<tr>
+											<td colspan="2" style="text-align: right">
+												To be paid by the patient
+											</td>
+											<td></td>
+										</tr>
+										<tr>
+											<td colspan="2" class="assignment">Assignment code
+											</td>
+											<td colspan="1"></td>
+											<td colspan="2" style="text-align: right">
+												To be paid by the insurance company
+											</td>
+											<td></td>
+										</tr>
+										<tr>
+											<td class="signature" rowspan="2" colspan="2">
+												Patient signature
+											</td>
+											<td class="signature" rowspan="2" colspan="2">
+												Signature and stamp medical Healthcare centre
+											</td>
+											<td class="signature" rowspan="2" colspan="2">
+												Signature and stamp of the Doctor
+											</td>
+										</tr>
+										<tr>
+											<td style="display: none"></td>
+											<td style="display: none"></td>
+											<td style="display: none"></td>
+										</tr>
+									</tfoot>
+								</table>
+								<table>
+									<thead>
+										<tr>
+											<th colspan="4">
+												6. Medicines prescribed (Section reserved for
+												the
+												prescribing Doctor)
+											</th>
+											<th class="section_reserved" colspan="1">
+												Section reserved for the pharmacist
+											</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td>No:</td>
+											<td>Drugs</td>
+											<td>Dosage</td>
+											<td>Quantity</td>
+											<td>Total Cost</td>
+										</tr>
+										<ng-container>
+											{medicinelist}
+										</ng-container>
+									</tbody>
+									<tfoot>
+										<tr>
+											<td rowspan="3" colspan="2">
+												<p style="white-space: break-spaces">
+													<u>Important:</u> The prescribing
+													practitioner will
+													indicate the duration of treatment for each
+													drug,
+													this form is valid only for one pharmacy and
+													its
+													validity cannot exceed 72 hours after
+													delivery
+												</p>
+											</td>
+											<td colspan="2">Total amount:</td>
+											<td>{totalCostOfAllMedicine}</td>
+										</tr>
+										<tr>
+											<td colspan="2">To be paid by the patient (%)</td>
+											<td>{totalCoPayment}</td>
+										</tr>
+										<tr>
+											<td colspan="2">To be paid by MAADO</td>
+											<td>{totalRequestedAmount}</td>
+										</tr>
+										<tr>
+											<td class="signature" rowspan="2" colspan="2"
+												style="width: 50%; text-align: center">
+												Signature and stamp Prescribing Doctor
+											</td>
+											<td class="signature" rowspan="2" colspan="4"
+												style="width: 50%; text-align: center">
+												<div>
+													<p *ngIf="pharm_signature!=''">
+														<img src="{pharm_signature}"
+															style="width: 150px; height: 70px" />
+													</p>
+													<p>Signature and stamp Pharmacist</p>
+												</div>
+											</td>
+										</tr>
+										<tr>
+											<td style="display: none"></td>
+											<td style="display: none"></td>
+											<td style="display: none"></td>
+										</tr>
+									</tfoot>
+								</table>
+								<!-- Add more tables here -->
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- <center>
+				<div class="maado">
+					<ng-template #maadocontent let-modal>
+						<div class="custome_modal">
+							<div class="modal-body" id="previewdiv" #previewdiv>
+							
+							</div>
+						</div>
+					</ng-template>
+				</div>
+			</center> -->
+		</div>
+	</div>
+
+</body>
+
+</html>
