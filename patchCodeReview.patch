@@ -1,30 +1,12 @@
-diff --git a/services/pharmacy/helpers/ses.js b/services/pharmacy/helpers/ses.js
---- a/services/pharmacy/helpers/ses.js
-+++ b/services/pharmacy/helpers/ses.js
-@@ -28,1 +28,1 @@
--      TemplateData: '{ \"name\':\'John Doe\'}'
-+      TemplateData: '{ "name\':\'John Doe\'}'
-diff --git a/services/labimagingdentaloptical/helpers/ses.js b/services/labimagingdentaloptical/helpers/ses.js
---- a/services/labimagingdentaloptical/helpers/ses.js
-+++ b/services/labimagingdentaloptical/helpers/ses.js
-@@ -27,1 +27,1 @@
--      TemplateData: '{ \"name\':\'John Doe\'}'
-+      TemplateData: '{ "name\':\'John Doe\'}'
-diff --git a/services/insurance/helpers/ses.js b/services/insurance/helpers/ses.js
---- a/services/insurance/helpers/ses.js
-+++ b/services/insurance/helpers/ses.js
-@@ -27,1 +27,1 @@
--      TemplateData: '{ \"name\':\'John Doe\'}'
-+      TemplateData: '{ "name\':\'John Doe\'}'
-diff --git a/services/patient/helpers/ses.js b/services/patient/helpers/ses.js
---- a/services/patient/helpers/ses.js
-+++ b/services/patient/helpers/ses.js
-@@ -27,1 +27,1 @@
--      TemplateData: '{ \"name\':\'John Doe\'}'
-+      TemplateData: '{ "name\':\'John Doe\'}'
 diff --git a/services/insurance/controllers/hospital/user.js b/services/insurance/controllers/hospital/user.js
 --- a/services/insurance/controllers/hospital/user.js
 +++ b/services/insurance/controllers/hospital/user.js
 @@ -67,1 +67,1 @@
 -  };
 +  }
+diff --git a/services/hospital/helpers/ses.js b/services/hospital/helpers/ses.js
+--- a/services/hospital/helpers/ses.js
++++ b/services/hospital/helpers/ses.js
+@@ -27,1 +27,1 @@
+-      TemplateData: '{ \"name\':\'John Doe\'}'
++      TemplateData: '{ "name\':\'John Doe\'}'

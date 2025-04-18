@@ -64,7 +64,7 @@ export class HospitalUserClass {
         errorCode: "INTERNAL_SERVER_ERROR",
       });
     }
-  };
+  }
 
   async createStaff(req, res) {
     try {
