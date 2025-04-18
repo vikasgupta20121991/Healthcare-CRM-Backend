@@ -25,7 +25,7 @@ let sendTemplateEmail = (recipientEmail) => {
           recipientEmail
         ]
       },
-      TemplateData: '{ \"name\':\'John Doe\'}'
+      TemplateData: '{ "name\':\'John Doe\'}'
     };
     return AWS_SES.sendTemplatedEmail(params).promise();
 };
