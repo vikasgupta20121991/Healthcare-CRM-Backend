@@ -19,13 +19,13 @@ exports.createPaymentIntent = [
         .withMessage("Payment method type missing")
         .not()
         .isEmpty()
-        .withMessage("Please provide payment method type"),
+    .withMessage("Please provide payment method type"),
     check("description")
         .exists()
         .withMessage("Description missing")
         .not()
         .isEmpty()
-        .withMessage("Please provide description"),
+    .withMessage("Please provide description"),
     check("plan_name")
         .exists()
         .withMessage("Plan name missing")

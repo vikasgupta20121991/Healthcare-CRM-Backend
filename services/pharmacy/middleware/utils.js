@@ -16,7 +16,7 @@ export const validationResponse = (req, res, next) => {
             messageID: messageID.badRequest,
             message: error.array()
         }));
-    } else {
+  } else {
         next();
     }
 }

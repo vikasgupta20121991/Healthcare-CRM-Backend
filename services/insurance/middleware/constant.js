@@ -101,7 +101,7 @@ export const htmlEmailVerify = (token, name, role) => {
           </div>
                   </body>
                   </html>
-  `
+  `;
 }
 
 export const htmlEmailProfileSetup = (token, name, role, username) => {
@@ -240,7 +240,7 @@ export const notificationlist = () => {
     },
     {
       image: "test",
-      name: "New patient sign-ups"
+      name: "New patient sign-ups",
     },
   ]
 

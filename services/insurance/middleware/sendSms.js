@@ -7,7 +7,7 @@ export const sendSms = (mobile_number, text) => {
         const smsApiKey = config.SMS_API_KEY
         const smsUrl = `https://api.smsmode.com/http/1.6/sendSMS.do?accessToken=${smsApiKey}&message=${text}&numero=${mobile_number}`
         axios({
-            method: "get",
+      method: "get",
             url: smsUrl,
         })
         .then(function (response) {

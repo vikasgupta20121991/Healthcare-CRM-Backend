@@ -4,7 +4,7 @@ const { check } = require("express-validator");
 exports.assignStaff = [
     check("parent_id")
         .exists()
-        .withMessage("Parent ID missing")
+    .withMessage("Parent ID missing")
         .not()
         .isEmpty()
         .withMessage("Please provide Parent ID"),

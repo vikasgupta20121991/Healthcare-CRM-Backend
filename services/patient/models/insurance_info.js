@@ -39,7 +39,7 @@ const insuranceInfoSchema = new mongoose.Schema(
         //     insurance_validity_to: {
         //         type: String,
         //     },
-        //     reimbursement_rate: {
+    //     reimbursement_rate: {
         //         type: String,
         //     },
         //     insurance_card_and_id_image: {
@@ -97,7 +97,7 @@ const insuranceInfoSchema = new mongoose.Schema(
         //     }
         // },
         primary_subscriber_id: {
-            type: mongoose.Schema.Types.ObjectId,
+      type: mongoose.Schema.Types.ObjectId,
             default: null,
         },
         secondary_subscriber_ids: [

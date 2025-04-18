@@ -27,7 +27,7 @@ const feeManagementSchema = new mongoose.Schema(
         },
         comments: {
           type: String
-        }
+        },
       }
     },
     home_visit: {

@@ -45,7 +45,7 @@ const leaves_managementSchema = new mongoose.Schema(
         enum: ["0", "1","2"], 
         type: String,
         default:0
-    }  // 0=pending , 1= approved ,2= rejected
+    }, // 0=pending , 1= approved ,2= rejected
   },
   { timestamps: true }
 );

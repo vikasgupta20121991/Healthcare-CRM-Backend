@@ -45,7 +45,7 @@ export const add_role = async (req, res) => {
                     });
                 } else {
                     handleResponse(req, res, 200, {
-                        status: false,
+            status: false,
                         message: `${CheckData} is already exist`,
                         errorCode: null,
                     });

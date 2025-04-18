@@ -3,7 +3,7 @@ import mongoose from "mongoose";
 const questionnaireSchema = new mongoose.Schema(
     {
         controller: {
-            type: String,
+      type: String,
         },
         question: {
             type: String,

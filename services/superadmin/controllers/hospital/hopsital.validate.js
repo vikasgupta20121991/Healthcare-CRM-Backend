@@ -8,7 +8,7 @@ exports.approveOrRejectHospital = [
         .not()
         .isEmpty()
         .withMessage("Please provide hospital ID"),
-    check("action")
+  check("action")
         .exists()
         .withMessage("Action missing")
         .not()

@@ -34,7 +34,7 @@ export const login = async (req, res) => {
             }));
         }
         const isMatch = await bcrypt.compare(password, user.password);
-        if (!isMatch)
+    if (!isMatch)
             return res.status(messageID.unAuthorizedUser).json(encryptObjectData({
                 status: responseCodes.failedStatus,
                 messageID: messageID.unAuthorizedUser,

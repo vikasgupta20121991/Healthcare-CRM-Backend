@@ -30,15 +30,15 @@ const readFileContent = (req, res) => {
             if (obj == 0) {
                 for (const key in res) {
                     if (key == "category_limit") {
+            res[key] = res[key].replace(/ +/g, "");
+                    }
+          if (key == "service_limit") {
                         res[key] = res[key].replace(/ +/g, "")
                     }
-                    if (key == "service_limit") {
+          if (key == "repayment_condition_max") {
                         res[key] = res[key].replace(/ +/g, "")
                     }
-                    if (key == "repayment_condition_max") {
-                        res[key] = res[key].replace(/ +/g, "")
-                    }
-                    if (key == "repayment_condition_for") {
+          if (key == "repayment_condition_for") {
                         res[key] = res[key].replace(/ +/g, "")
                     }
                     if (key == "waiting_period_max") {
@@ -53,7 +53,7 @@ const readFileContent = (req, res) => {
             }
         })
     }
-    if (data.length == 0) {
+  if (data.length == 0) {
         return sendResponse(req, res, 200, {
             status: false,
             body: null,

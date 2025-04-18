@@ -10,7 +10,7 @@ exports.specialization = [
         .withMessage("Please provide specialization"),
     check("category")
         .exists()
-        .withMessage("category missing")
+    .withMessage("category missing")
         .not()
         .isEmpty()
         .withMessage("Please provide category"),

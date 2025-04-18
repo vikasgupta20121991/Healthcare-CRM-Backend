@@ -22,7 +22,7 @@ const assessmentSchema = new mongoose.Schema(
             ref: "Appointment",
         },
     },
-    { timestamps: true }
+  { timestamps: true }
 );
 
 export default mongoose.model("Assessment", assessmentSchema);

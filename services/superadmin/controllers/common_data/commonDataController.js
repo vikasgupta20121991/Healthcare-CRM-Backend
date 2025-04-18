@@ -488,7 +488,7 @@ class CommonDataController {
       {
           var keynew=sort.split(":")[0];
           var value=sort.split(":")[1];
-          sortingarray[keynew] = value;
+        sortingarray[keynew] = value;
       }else{
         sortingarray['createdAt'] = -1;
 

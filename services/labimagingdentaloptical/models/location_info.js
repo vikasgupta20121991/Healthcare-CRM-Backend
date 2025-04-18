@@ -3,7 +3,7 @@ const geoJsonSchema = new mongoose.Schema(
     {
         type: {
             type: String,
-            default: "Point"
+    default: "Point",
         },
         coordinates: {
             type: [Number],
@@ -67,7 +67,7 @@ const locationInfoSchema = new mongoose.Schema(
         },
         for_portal_user: {
             type: mongoose.Schema.Types.ObjectId,
-            required: true,
+      required: true,
             ref: "PortalUser",
         },
         type: {

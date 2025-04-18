@@ -62,7 +62,7 @@ const manualMedicineClaimData = new mongoose.Schema(
         reasonOfRejecting: {
             type: String,
         },
-        comments: {
+    comments: {
             type: String,
         },
         externalReimbursement:{

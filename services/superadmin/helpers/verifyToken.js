@@ -27,7 +27,7 @@ export const verifyToken = async (req, res, next) => {
         //     return sendResponse(req, res, messageID.unAuthorizedUser, {
         //         status: false,
         //         body: null,
-        //         message: messages.notAuthorized,
+    //         message: messages.notAuthorized,
         //         errorCode: null,
         //     });
         // } else if (decode.data.role === 'hospital' && (!config.hospitalRoutes.includes(req.originalUrl.split('?')[0]) && !config.hospitalRoutes.includes(`${req.baseUrl}/*`))) {
@@ -38,7 +38,7 @@ export const verifyToken = async (req, res, next) => {
         //         errorCode: null,
         //     });
         // }
-        req.user = decode.data
+    req.user = decode.data;
         next();
     } catch (error) {
         if (error.name == "TokenExpiredError") {

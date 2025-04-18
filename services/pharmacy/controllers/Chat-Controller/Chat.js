@@ -13,7 +13,7 @@ export const createdChat = async (req, res) => {
   try {
     const headers = {
       'Authorization': req.headers['authorization']
-    }
+    };
     let newData = await Chat.findOne({
       $or: [
         {
@@ -25,7 +25,7 @@ export const createdChat = async (req, res) => {
           receiverID: mongoose.Types.ObjectId(req.body.data.sender),
         },
       ],
-      isGroupChat:false
+      isGroupChat: false,
     });
 
     // console.log("newData==>",newData)
@@ -176,7 +176,7 @@ export const getCreatedChats = async (req, res) => {
     
       if(chat.profile_pic && chat.profile_pic.length > 0) {
         const GroupProfilePic = await getDocument(chat.profile_pic);
-        chat.profile_pic = GroupProfilePic;
+          chat.profile_pic = GroupProfilePic;
       }
 
       return chat;

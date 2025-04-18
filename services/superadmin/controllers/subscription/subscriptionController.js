@@ -20,7 +20,7 @@ class HospitalSubscription {
             .exec();
             const count = await HospitalSubscriptionModal.countDocuments({
                 plan_for: subscription_plan_for
-            });
+      });
     
             handleResponse(req, res, 200, {
                 status: true,

@@ -5,7 +5,7 @@ var fcm = new FCM(serverKey)
 export const sendNotification =async( message,title,fcmToken,receiverId)=>{
     try{ 
       console.log(message,title,fcmToken,receiverId,"fdrgyuey774ety")
-        var message = {
+    var message = {
             to: fcmToken,
             notification: {
               title: title,

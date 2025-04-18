@@ -27,7 +27,7 @@ const subscriberUseLimit = new mongoose.Schema(
             type: Number
         },
         own_limit: {
-            type: Number,
+      type: Number,
         },
         plan_validity: {
             type: String

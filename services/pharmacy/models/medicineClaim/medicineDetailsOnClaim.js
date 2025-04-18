@@ -9,7 +9,7 @@ const medicineDetailsOnClaimSchema = new mongoose.Schema(
         medicineName: {
             type: String,
         },
-        quantityPrescribed: {
+    quantityPrescribed: {
             type: String,
         },
         quantityDelivered: {

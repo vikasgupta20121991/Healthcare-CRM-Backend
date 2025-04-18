@@ -4,7 +4,7 @@ import bodyParser from "body-parser";
 import path from "path";
 import InitiateMongoServer from "./config/db.js";
 
-const useragent = require('express-useragent');
+const useragent = require("express-useragent");
 const app = express();
 const fileUpload = require('express-fileupload');
 

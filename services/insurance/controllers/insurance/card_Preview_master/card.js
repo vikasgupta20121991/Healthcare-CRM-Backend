@@ -69,7 +69,7 @@ export class InsuranceCard {
                 },
                 {
                     $sort: {
-                        "_id.has_category": 1, 
+            "_id.has_category": 1,
                         "doc.service": 1
                     }
                 },
@@ -95,7 +95,7 @@ export class InsuranceCard {
                 message: 'Category Service Fetch Successfully!',
                 errorCode: null,
             });
-        } catch (error) {
+    } catch (error) {
             console.error(error, "errorrrrrr");
             sendResponse(req, res, 500, {
                 status: false,

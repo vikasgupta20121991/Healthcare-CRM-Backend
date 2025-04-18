@@ -14,7 +14,7 @@ import {
     editSubscriptionPlan,
     forgotPassword,
     getInsuranceAdminApprovedList,
-    getInsuranceAdminDetails,
+  getInsuranceAdminDetails,
     getInsuranceAdminNotApprovedList,
     getInsuranceAdminRejectList,
     getInsuranceTemplateList,

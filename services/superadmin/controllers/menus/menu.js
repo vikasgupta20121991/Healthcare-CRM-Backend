@@ -26,7 +26,7 @@ const add_menu = async (req, res) => {
                     errorCode: err.code ? err.code : "INTERNAL_SERVER_ERROR",
                 })
             }
-            handleResponse(req, res, 200, {
+      handleResponse(req, res, 200, {
                 status: true,
                 body: null,
                 message: "Menu Added succuessfully",
@@ -34,7 +34,7 @@ const add_menu = async (req, res) => {
             })
         });
 
-    } catch (error) {
+  } catch (error) {
         handleResponse(req, res, 500, {
             status: false,
             body: null,
@@ -59,7 +59,7 @@ const all_menus = async (req, res) => {
             status: false,
             body: null,
             message: "failed to fetched all menus",
-            errorCode: "INTERNAL_SERVER_ERROR",
+      errorCode: "INTERNAL_SERVER_ERROR",
         })
     }
 

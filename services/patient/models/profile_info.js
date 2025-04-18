@@ -28,7 +28,7 @@ const profileInfoSchema = new mongoose.Schema(
         },
         profile_pic: {
             type: String,
-            default:''
+      default: "",
         },
         profile_pic_signed_url: {
             type: String,

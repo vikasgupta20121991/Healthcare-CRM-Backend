@@ -12,7 +12,7 @@ const immunizationListSchema = new mongoose.Schema(
         // },
         added_by: {
             type: mongoose.Schema.Types.ObjectId,
-            ref: "Superadmin"
+      ref: "Superadmin",
         },
         active_status: {
           type: Boolean,

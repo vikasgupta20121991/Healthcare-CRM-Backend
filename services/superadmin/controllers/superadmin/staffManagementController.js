@@ -24,7 +24,7 @@ const getDocumentObject = async (req, userId) => {
   if (req.files) {
     if ('staff_profile' in req.files) {
       const s3result = await uploadFile(req.files.staff_profile.data, {
-        Bucket: 'healthcare-crm-stage-docs',
+        Bucket: "healthcare-crm-stage-docs",
         Key: `superadmin/${userId}/staff-profile/${req.files.staff_profile.name}`,
       })
       staff_profile_object['name'] = req.files.staff_profile.name

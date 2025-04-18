@@ -11,7 +11,7 @@ AWS.config.update({
         process.env.AWS_SECRET_ACCESS_KEY ||
         "", // Secret access key
     region: "eu-west-3", // Region
-    correctClockSkew: true
+  correctClockSkew: true,
 });
 const privateKeyFilePath = "../private_key.pem";
 const key_path = path.resolve(__dirname, privateKeyFilePath)

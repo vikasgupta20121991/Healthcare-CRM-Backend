@@ -41,7 +41,7 @@ const portalUserSchema = new mongoose.Schema(
             type: mongoose.Schema.Types.ObjectId,
             ref: "Role",
         },
-        dob: {
+    dob: {
             type: String,
         },
         isActive: {

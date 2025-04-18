@@ -17,7 +17,7 @@ const geoJsonSchema = new mongoose.Schema(
 const locationInfoSchema = new mongoose.Schema(
     {
         nationality: {
-            type: mongoose.Schema.Types.ObjectId,
+      type: mongoose.Schema.Types.ObjectId,
             // required: true,
             // ref: "countries",
             default: null
@@ -76,7 +76,7 @@ const locationInfoSchema = new mongoose.Schema(
         for_portal_user: {
             type: mongoose.Schema.Types.ObjectId,
             required: true,
-            ref: "PortalUser",
+      ref: "PortalUser",
         },
     },
     { timestamps: true }

@@ -4,7 +4,7 @@ const VillageSchema = new mongoose.Schema(
     {
         name: {
             type: String,
-        },
+    },
         department_id: {
             type: mongoose.Schema.Types.ObjectId,
             ref: "Department",

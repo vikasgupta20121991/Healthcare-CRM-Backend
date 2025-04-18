@@ -3,7 +3,7 @@
 // utils
 import { sendResponse } from "../helpers/transmission";
 import Http from "../helpers/httpservice"
-const httpService = new Http()
+const httpService = new Http();
 import mongoose from "mongoose";
 import { getNextSequenceValue } from "../middleware/utils";
 import Location_info from '../models/location_info';

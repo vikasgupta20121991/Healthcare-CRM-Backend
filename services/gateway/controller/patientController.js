@@ -32,7 +32,7 @@ export const login = async (req, res) => {
         method: 'post',
         url: `${baseurl}/patient/login`,
         data: req.body,
-        headers: { role: req.header("role") }
+    headers: { role: req.header("role") },
     }).then(async function (response) {
         await res.status(200).json({ data: response.data })
     }).catch(async function (error) {
@@ -129,7 +129,7 @@ export const addVitals = async (req, res) => {
     const baseurl = BASEURL.patientServiceUrl;
     axios({
         method: 'post',
-        url: `${baseurl}/patient/create-profile/add-vitals`,
+    url: `${baseurl}/patient/create-profile/add-vitals`,
         data: req.body
     }).then(async function (response) {
         await res.status(200).json({ data: response.data })

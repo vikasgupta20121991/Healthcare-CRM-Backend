@@ -2,7 +2,7 @@ import "dotenv/config.js";
 
 export const config = {
     DB: {
-        HOST: process.env.MONGO_DB_HOST ,
+    HOST: process.env.MONGO_DB_HOST,
         PORT: process.env.MONGO_DB_PORT ,
         DATABASE: process.env.INSURANCE_MONGO_DATABASE || "healthcare-crm3",
         USERNAME: process.env.INSURANCE_MONGO_USER || "healthcare-crm3",
@@ -34,7 +34,7 @@ export const config = {
     NODE_ENV: process.env.NODE_ENV || "local",
     INSURANCE_ROUTES: ['/insurance-subscriber/*'],
     JWT_EXPIRATION_IN_MINUTES: process.env.JWT_EXPIRATION_IN_MINUTES || 1440,
-    SMS_API_KEY: process.env.SMS_API_KEY ||"",
+  SMS_API_KEY: process.env.SMS_API_KEY || "",
 };
 
 export const messages = {

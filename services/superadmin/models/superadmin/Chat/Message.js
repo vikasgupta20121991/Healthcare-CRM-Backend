@@ -21,7 +21,7 @@ const messageModel = mongoose.Schema(
     },
     isDeleted: {
       type: Boolean,
-      default: false
+      default: false,
     },
     attachments: [
       {

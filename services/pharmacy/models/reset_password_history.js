@@ -8,7 +8,7 @@ const resetPasswordHistorySchema = new mongoose.Schema(
     },
     uuid: {
       type: String,
-      required: true
+      required: true,
     },
     email: {
       type: String,

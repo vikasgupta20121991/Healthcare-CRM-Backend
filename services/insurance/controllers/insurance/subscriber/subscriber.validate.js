@@ -61,8 +61,8 @@ exports.addPrimarySubscriber = [
       .withMessage("Card ID missing")
       .not()
       .isEmpty()
-      .withMessage("Card ID empty"),
-    check("employee_id")
+    .withMessage("Card ID empty"),
+  check("employee_id")
       .exists()
       .withMessage("Employee ID missing")
       .not()

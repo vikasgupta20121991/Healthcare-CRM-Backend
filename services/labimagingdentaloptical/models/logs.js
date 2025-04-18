@@ -18,7 +18,7 @@ const counterSchema = new mongoose.Schema(
                 type: String,
             }
         }, 
-        userAddress : {
+    userAddress: {
             type: String,
         },     
         ipAddress :{

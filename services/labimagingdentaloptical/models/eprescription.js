@@ -46,7 +46,7 @@ const eprescriptionSchema = new mongoose.Schema(
         },
         accidentRelated: {
             type: Boolean,
-            default: false
+      default: false,
         },
         occupationalDesease: {
             type: Boolean,

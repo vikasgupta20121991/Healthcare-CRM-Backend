@@ -4,7 +4,7 @@ import roleCounter from "../../models/rolesandpermission/role_counter_model";
 import { sendResponse } from "../../helpers/transmission";
 import PortalUser from "../../models/portal_user";
 
-let seqId=0;
+let seqId = 0;
 const add_role = async (req, res) => {
     roleCounter.findOneAndUpdate(
         {id:"autoval"},
@@ -45,7 +45,7 @@ const add_role = async (req, res) => {
                     });
                 } else {
                     sendResponse(req, res, 200, {
-                        status: false,
+            status: false,
                         message: `${CheckData} is already exist`,
                         errorCode: null,
                     });

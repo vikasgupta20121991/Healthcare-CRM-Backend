@@ -8,7 +8,7 @@ import { sendSms } from "../middleware/sendSms";
 import { checkPassword, generateRefreshToken, generateTenSaltHash, generateToken } from "../middleware/utils";
 import { verifyEmail2fa, forgotPasswordEmail,sendStaffDetails } from "../helpers/emailTemplate";
 import { sendEmail } from "../helpers/ses";
-import crypto from "crypto"
+import crypto from "crypto";
 import department_info from "../models/department_info";
 import service_info from "../models/service_info";
 import unit_info from "../models/unit_info";

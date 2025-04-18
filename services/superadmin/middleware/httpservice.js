@@ -8,12 +8,12 @@ const { BaseUrl } = config;
 class Http {
 
     get(path, data, headers){
-        const baseurl = BaseUrl.userManagementServiceUrl;
+    const baseurl = BaseUrl.userManagementServiceUrl;
         return new Promise((resolve, reject) => {
             axios({
                 method: 'get',
                 url: `${baseurl}/${path}`,
-                params: data,
+        params: data,
                 headers
             }).then(async function (response) {
                 resolve(response.data)

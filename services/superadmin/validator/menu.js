@@ -11,7 +11,7 @@ const editMenuValidator=[
 ]
 
 const permValidator = [
-    body("menu_id", "Please Enter a Valid MenuId").not().isEmpty(),
+  body("menu_id", "Please Enter a Valid MenuId").not().isEmpty(),
     body("perm_name", "Please Enter Permission Name").not().isEmpty()
 ];
 

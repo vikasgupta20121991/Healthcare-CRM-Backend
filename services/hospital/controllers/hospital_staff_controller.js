@@ -24,7 +24,7 @@ import mongoose from "mongoose";
 import SubscriptionPurchaseStatus from "../models/subscription/purchasestatus";
 
 class HospitalStaffController {
-    async addStaff(req, res) {
+  async addStaff(req, res) {
         const {
 
             first_name,

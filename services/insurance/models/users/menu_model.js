@@ -5,7 +5,7 @@ const menuSchema = new mongoose.Schema({
         type:String,
         required:true
     },
-    parent_id:{
+    parent_id: {
         type:String,
         required:true,
         default:0

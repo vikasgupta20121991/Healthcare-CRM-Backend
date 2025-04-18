@@ -8,7 +8,7 @@ const adminInfoSchema = new mongoose.Schema(
         first_name: {
             type: String,
         },
-        middle_name: {
+    middle_name: {
             type: String,
         },
         last_name: {
@@ -57,7 +57,7 @@ const adminInfoSchema = new mongoose.Schema(
             },
             name: [
                 {
-                    type: mongoose.Schema.Types.ObjectId,
+          type: mongoose.Schema.Types.ObjectId,
                 },
             ],
         },

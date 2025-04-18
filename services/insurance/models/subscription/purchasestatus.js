@@ -4,7 +4,7 @@ const purchaseStausSchema = new mongoose.Schema(
     {
         subscription_plan_name: {
             type: String,
-        },
+    },
         invoice_number: {
             type: String,
         },

@@ -15,7 +15,7 @@ const getIpFromRequest = (req) => {
 };
 
 const sendResponse = (req, res, statusCode, result) => {
-    // const ip = getIpFromRequest(req);
+  // const ip = getIpFromRequest(req);
     if (
         // req.useragent.browser === "PostmanRuntime" && config.NODE_ENV === "local"
         config.NODE_ENV === "local"

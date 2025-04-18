@@ -114,7 +114,7 @@ console.log("templateNameExist====",templateNameExist);
       var sort = req.query.sort
       var sortingarray = {};
       if (sort != 'undefined' && sort != '' && sort != undefined)  {
-          var keynew = sort.split(":")[0];
+        var keynew = sort.split(":")[0];
           var value = sort.split(":")[1];
           sortingarray[keynew] = value;
       }else{

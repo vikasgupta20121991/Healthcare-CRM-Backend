@@ -15,7 +15,7 @@ const invitationSchema = new mongoose.Schema(
             type:String,
             default: null
         },
-        phone: {
+    phone: {
             type:String,
         },
         address: {

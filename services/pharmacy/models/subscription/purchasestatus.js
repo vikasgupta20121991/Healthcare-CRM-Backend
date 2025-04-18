@@ -12,7 +12,7 @@ const purchaseStausSchema = new mongoose.Schema(
             type: String,
         },
         services: {
-            type: Array,
+      type: Array,
             default:null
         },
         currency_code: {

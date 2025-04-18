@@ -22,7 +22,7 @@ class Http {
             }).catch(async function (error) {
                 reject(error)
             });
-        })
+    });
     }
     getStaging(path, data, headers, service) {
         const baseurl = BaseUrl[service];

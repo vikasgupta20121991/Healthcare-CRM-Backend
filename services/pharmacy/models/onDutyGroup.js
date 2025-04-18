@@ -2,7 +2,7 @@ import mongoose, { Mongoose, now, Schema } from "mongoose";
 
 
 const OnDutyGroupSchema = new mongoose.Schema(
-    {
+  {
         onDutyGroupNumber: {
             type: String,
         },

@@ -12,6 +12,6 @@ const PrivacyAndConditionSchema = new mongoose.Schema(
             type: String,
         }
     },
-    { timestamps: true }
+  { timestamps: true }
 );
 export default mongoose.model("PrivacyAndCondition", PrivacyAndConditionSchema);

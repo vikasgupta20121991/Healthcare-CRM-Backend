@@ -1,7 +1,7 @@
 import mongoose, { Mongoose, now, Schema } from "mongoose";
 const associationData = new mongoose.Schema(
     {
-        name: {
+    name: {
             type: String,
         },
         code: {

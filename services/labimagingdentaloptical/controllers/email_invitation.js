@@ -36,7 +36,7 @@ export const sendInvitation = async (req, res) => {
                         created_By,
                         verify_status: "PENDING",
                         type
-                    }
+          },
                 },
                 { new: true }
             );

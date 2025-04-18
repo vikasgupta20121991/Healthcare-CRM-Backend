@@ -35,7 +35,7 @@ const add_user_menu = async (req, res) => {
         const result = await MenuPermission.insertMany(menusArray)
         if (result) {
             handleResponse(req, res, 200, {
-                status: true,
+        status: true,
                 body: result,
                 message: "Permission Added succuessfully",
                 errorCode: null,

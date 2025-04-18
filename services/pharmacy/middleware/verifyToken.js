@@ -24,7 +24,7 @@ export const verifyToken = async (req, res, next) => {
         //     errorCode: null,
         // });
         // if (decode.data.role === 'insurance' && (!config.insuranceRoutes.includes(req.originalUrl.split('?')[0]) && !config.insuranceRoutes.includes(`${req.baseUrl}/*`))) {
-        //     return sendResponse(req, res, messageID.unAuthorizedUser, {
+    //     return sendResponse(req, res, messageID.unAuthorizedUser, {
         //         status: false,
         //         body: null,
         //         message: messages.notAuthorized,

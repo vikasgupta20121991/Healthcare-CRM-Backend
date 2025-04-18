@@ -17,7 +17,7 @@ const basicInfoSchema = new mongoose.Schema(
         dob: {
             type: String,
         },
-        designation: {
+    designation: {
             type: String,
         },
         title: {

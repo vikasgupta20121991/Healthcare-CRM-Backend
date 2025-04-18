@@ -101,7 +101,7 @@ const orderDetailSchema = new mongoose.Schema(
             type: String,
             enum: [
                 "Paramedical-Professions",
-                "Dental",
+        "Dental",
                 "Laboratory-Imaging",
                 "Optical"
             ],

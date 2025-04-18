@@ -1,5 +1,5 @@
 import "dotenv/config.js";
-const AWS = require('aws-sdk');
+const AWS = require("aws-sdk");
 const config = {
     accessKeyId: process.env.AWS_ACCESS_KEY_ID || "", // Access key ID
     secretAccesskey:
@@ -17,9 +17,9 @@ let sendEmail = (params) => {
 
 let sendTemplateEmail = (recipientEmail) => {
     let params = {
-      Source: '<email address you verified>',
+    Source: "<email address you verified>",
       Template: '<name of your template>',
-      Destination: {
+    Destination: {
         ToAddresse: [ 
           recipientEmail
         ]

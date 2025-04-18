@@ -28,7 +28,7 @@ const SubscriberSchema = new mongoose.Schema(
         relationship_with_insure: {
             type: String,
         },
-        company_name: {
+    company_name: {
             type: String,
         },
         subscriber_full_name: {

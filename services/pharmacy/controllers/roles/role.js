@@ -15,7 +15,7 @@ export const add_role = async (req, res) => {
         async(err, cd) => {
 
             if (cd == null) {
-                const newval = new roleCounter({ id: "autoval", seq: 1 })
+        const newval = new roleCounter({ id: "autoval", seq: 1 });
                 newval.save();
                 seqId = 1;
             } else {
@@ -36,7 +36,7 @@ export const add_role = async (req, res) => {
                     is_delete:'No'
                 });
                 const CheckData = foundItems.map((item) => item.name);
-                if (foundItems.length == 0) {
+        if (foundItems.length == 0) {
                     const savedRole = await Role.insertMany(list)
                     handleResponse(req, res, 200, {
                         status: true,
@@ -56,7 +56,7 @@ export const add_role = async (req, res) => {
                 handleResponse(req, res, 500, {
                   status: false,
                   body: null,
-                  message: "failed to add Role",
+          message: "failed to add Role",
                   errorCode: "INTERNAL_SERVER_ERROR",
                 });
                }

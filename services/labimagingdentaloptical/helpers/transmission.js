@@ -9,7 +9,7 @@ const getIpFromRequest = (req) => {
         req.headers["x-real-ip"] ||
         req.headers["x-forwarded-for"] ||
         req.socket.remoteAddress ||
-        ""
+    ""
     ).split(",");
     return ips[0].trim();
 };

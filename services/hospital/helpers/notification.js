@@ -31,7 +31,7 @@ export const notification =(async (creatorType,createdBy, notificationFor, toUse
                 if (config.config.NODE_ENV == "local") {
                     resolve(response.data)
                 } else {
-                    const decryData = decryptionData(response.data)
+            const decryData = decryptionData(response.data);
                     const obj = JSON.parse(decryData);
                     resolve(obj)
                 }

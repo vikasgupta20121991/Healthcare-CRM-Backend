@@ -5,7 +5,7 @@ const pathologyTestInfoNewSchema = new mongoose.Schema(
         typeOfTest: {
             type: String,
             required: true
-        },
+    },
         nameOfTest: {
             type: String,
             required: true

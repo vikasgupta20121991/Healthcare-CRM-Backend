@@ -23,7 +23,7 @@ const add_role = async (req, res) => {
 
             try{
                 const { rolesArray, for_user,type } = req.body
-                const list = rolesArray.map((singleData) => ({
+        const list = rolesArray.map((singleData) => ({
                     ...singleData,
                     for_user,
                     role_id: seqId, // Assign seqId to role_id

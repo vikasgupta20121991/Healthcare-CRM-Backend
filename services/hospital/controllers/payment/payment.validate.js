@@ -9,7 +9,7 @@ exports.viewSubscriptionPurchasedPlans = [
         .isEmpty()
         .withMessage("Please provide subscription payment ID"),
 
-    (req, res, next) => {
+  (req, res, next) => {
         validationResultData(req, res, next);
     }
 ]

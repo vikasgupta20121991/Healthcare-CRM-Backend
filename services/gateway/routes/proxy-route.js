@@ -65,7 +65,7 @@ const ROUTES = [
         },
     },
     {
-        url: "/healthcare-crm-labimagingdentaloptical",
+    url: "/healthcare-crm-labimagingdentaloptical",
         auth: false,
         creditCheck: false,
         // rateLimit: {

@@ -26,7 +26,7 @@ export const encryptObjectData = (data) => {
     const dataToEncrypt = JSON.stringify(data);
     const encPassword = cryptoSecret;
     const encryptedData = CryptoJS.AES.encrypt(dataToEncrypt.trim(), encPassword.trim()).toString();
-    return encryptedData;
+  return encryptedData;
 }
 
 export const encryptData = (data) => {

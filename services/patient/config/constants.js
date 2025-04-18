@@ -24,7 +24,7 @@ export const config = {
 
       },
     API_PORT: process.env.PATIENT_SERVICE_PORT || 8007,
-    EMAIL: {
+  EMAIL: {
         HOST: "smtp.gmail.com",
         USER: "",
         PASSWORD: "pbskkrwtkrtzdagk",
@@ -47,7 +47,7 @@ export const messages = {
     dataNotFound: "No data found",
     incorrectPassword: "Incorrect Password",
     passwordNotCreated: "Password Not Created",
-    loginSuccess: "Login Successfully",
+  loginSuccess: "Login Successfully",
     listSuccess: "Data fetch successfully",
     updateSuccess: "Data update successfully",
     statusUpdate: "Status update successfully",

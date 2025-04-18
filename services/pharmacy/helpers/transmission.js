@@ -78,7 +78,7 @@ const validationResultData = (req, res, next) => {
           status: false,
           body: err.array(),
           message: "failed with validation",
-          errorCode: "INTERNAL_SERVER_ERROR",
+      errorCode: "INTERNAL_SERVER_ERROR",
       })
   }
 };

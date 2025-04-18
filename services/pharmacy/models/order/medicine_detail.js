@@ -36,7 +36,7 @@ const medicineDetailSchema = new mongoose.Schema(
         duration: {
             type: String,
         },
-        price_per_unit: {
+    price_per_unit: {
             type: String,
         },
         comment: {
@@ -64,7 +64,7 @@ const medicineDetailSchema = new mongoose.Schema(
             ref: "PortalUser",
         },
     },
-    { timestamps: true }
+  { timestamps: true }
 );
 
 export default mongoose.model("MedicineDetail", medicineDetailSchema);

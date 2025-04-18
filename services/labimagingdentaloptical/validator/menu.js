@@ -15,7 +15,7 @@ const permValidator = [
     body("perm_name", "Please Enter Permission Name").not().isEmpty()
 ];
 
-const editPermValidator=[
+const editPermValidator = [
     ...permValidator,
     body("id", "Please Enter a Valid Id").not().isEmpty(),
 ]

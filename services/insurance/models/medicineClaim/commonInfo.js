@@ -32,7 +32,7 @@ const mediClaimCommonInfoSchema = new mongoose.Schema(
             default: false
         },
         preAuthReclaimId: {
-            type: String
+      type: String,
         },
         created_by: {
             type: String,
@@ -57,7 +57,7 @@ const mediClaimCommonInfoSchema = new mongoose.Schema(
                 "Laboratory-Imaging-order",
                 "Optical-order",
                 "Dental-order",
-                "Paramedical-Professions-order",
+        "Paramedical-Professions-order",
                 "Paramedical-Professions-appointment"
             ],
         },

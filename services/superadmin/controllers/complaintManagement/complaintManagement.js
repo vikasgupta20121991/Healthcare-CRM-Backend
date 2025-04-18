@@ -68,7 +68,7 @@ class ComplaintManagementController {
         try {
             const { limit, page, searchText, dateFilter, type, userId  } = req.query;
 
-            var sort = req.query.sort
+      var sort = req.query.sort;
             var sortingarray = {};
             if (sort != 'undefined' && sort != '' && sort != undefined)  {
                 var keynew = sort.split(":")[0];

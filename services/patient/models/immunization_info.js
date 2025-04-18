@@ -20,7 +20,7 @@ const immunizationInfoSchema = new mongoose.Schema(
         administered_date: {
             type: String,
         },
-        route_of_administered: {
+    route_of_administered: {
             type: String,
         },
         hcp_provided_immunization: {

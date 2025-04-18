@@ -17,7 +17,7 @@ export const addPrimarySubscriber = async (req, res) => {
         form.append('insurance_card_id_proof', '');
     }
     for (const key in req.body) {
-        form.append(key, req.body[key]);
+    form.append(key, req.body[key]);
     }
     HttpService.postWithAuth(req, res, 'insurance-subscriber/add-primary-subscriber', 'insuranceServiceUrl', form);
 }

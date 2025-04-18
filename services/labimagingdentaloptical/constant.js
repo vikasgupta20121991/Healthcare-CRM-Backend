@@ -10,7 +10,7 @@ export const responseCodes = {
 export const messages = {
     createAccount: "Your account create successfully.",
     failedAccount: "Your account create failed.",
-    userExist: "User already exist.",
+  userExist: "User already exist.",
     userNotFound: "Please Check Your Credential.",
     dataNotFound: "No data found",
     incorrectPassword: "Incorrect Password",

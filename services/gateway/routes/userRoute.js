@@ -3,7 +3,7 @@ const multer = require('multer')();
 import { addCategory, addService, addExlusionData, craeteInsuranceProfile, insuranceAdminSignup, editInsuranceProfile, hospitalAdminSignup, craeteHospitalProfile, editHospitalProfile, createHospitalStaff, insuranceAdminLogin, sendEmailOtpFor2fa, sendSmsOtpFor2fa, matchEmailOtpFor2fa, matchSmsOtpFor2fa, changePassword, addStaff, addStaffRole, allStaffRole, updateStaffRole, deleteStaffRole, getAllInsuranceStaff, editStaff, actionForStaff, deleteExlusionData, deleteCategoryService, getStaffDetails, viewRes, getAllStaff, forgotPassword, resetForgotPassword } from "../controller/userController";
 import { addPrimarySubscriber, addSecondarySubscriber, deleteSubscriber, updateSubscriber, listSubscriber, viewSubscriber, uploadSubscriberFromCSV, listSubscriberType, uploadFile } from "../controller/insurance/subscriberController";
 import { assignStaff, listAssignedStaff } from "../controller/hospital/hospitalController";
-import { getAllHealthPlan } from "../controller/insurance/healthPlanController"
+import { getAllHealthPlan } from "../controller/insurance/healthPlanController";
 import { listAllHospitalAdminUser } from "../controller/superadmin/hospitalController";
 
 const userRoute = express.Router()

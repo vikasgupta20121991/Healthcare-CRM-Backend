@@ -1,7 +1,7 @@
 import mongoose from "mongoose";
 
 const AboutUsSchema = new mongoose.Schema(
-    {
+  {
         _id: {
             type: String,
         },

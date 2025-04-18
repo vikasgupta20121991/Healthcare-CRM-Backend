@@ -25,7 +25,7 @@ const getDays = (type) => {
             return [90, 'Quatarly']
             break;
 
-        case 'half-yearly':
+    case "half-yearly":
             return [180, 'Half Quaterly']
             break;
         case 'yearly':

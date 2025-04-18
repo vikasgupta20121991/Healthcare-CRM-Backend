@@ -34,7 +34,7 @@ const uploadFileToLocalStorage = (req, res, next) => {
     //         status: false,
     //         body: null,
     //         message: "Only .csv mime type allowed!",
-    //         errorCode: "INTERNAL_SERVER_ERROR",
+  //         errorCode: "INTERNAL_SERVER_ERROR",
     //     })
     // }
     const filename = file.name.split('.')[0] + '-' + Date.now() + '.xlsx';

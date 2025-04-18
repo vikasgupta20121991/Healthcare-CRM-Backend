@@ -23,7 +23,7 @@ const add_user_menu = async (req, res) => {
                     errorCode: "INTERNAL_SERVER_ERROR",
                 })
             }
-            handleResponse(req, res, 200, {
+      handleResponse(req, res, 200, {
                 status: true,
                 body: null,
                 message: "Permission Added succuessfully",

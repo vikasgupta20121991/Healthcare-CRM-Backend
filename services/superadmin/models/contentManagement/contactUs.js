@@ -4,7 +4,7 @@ const ContactUsSchema = new mongoose.Schema(
     {
         // _id: {
         //     type: String,
-        // },
+    // },
         phone: {
             type: String,
         },
@@ -16,7 +16,7 @@ const ContactUsSchema = new mongoose.Schema(
         },
         type: {
             type: String,
-        }
+    },
     },
     { timestamps: true }
 );

@@ -1,6 +1,6 @@
 import express from "express";
 import { hospitalAdminSignup, matchSmsOtpFor2fa, sendSmsOtpFor2fa } from "../controller/hospitalController";
-const hospitalRoute = express.Router()
+const hospitalRoute = express.Router();
 
 //hospital Subscription Routes
 hospitalRoute.post("/admin-signup", hospitalAdminSignup);

@@ -2,7 +2,7 @@ import mongoose, { Schema } from "mongoose";
 
 const purchaseStausSchema = new mongoose.Schema(
     {
-        subscription_plan_name: {
+    subscription_plan_name: {
             type: String,
         },
         invoice_number: {
@@ -61,10 +61,10 @@ const purchaseStausSchema = new mongoose.Schema(
         },
         mobile_pay_number: {
             type: String,
-            default:''
+      default: "",
         },
     },
-    { timestamps: true }
+  { timestamps: true }
 );
 
 export default mongoose.model("SubscriptionPurchaseStatus", purchaseStausSchema);

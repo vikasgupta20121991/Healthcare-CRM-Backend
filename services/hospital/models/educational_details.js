@@ -27,7 +27,7 @@ const eduDetailSchema = new mongoose.Schema(
     for_portal_user: {
       type: mongoose.Schema.Types.ObjectId,
       required: true,
-      ref: "PortalUser"
+      ref: "PortalUser",
     },
   },
   { timestamps: true }

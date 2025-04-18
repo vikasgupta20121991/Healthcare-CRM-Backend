@@ -22,7 +22,7 @@ export const getAllUsersForChat = async (req, res) => {
 
         if (getRole.role === "STAFF" && getRole.type === portalType) {
             // console.log("run INDIVIDUAL_STAFF")
-            getData = await getIndividualFourPortalStaff(loggedInId, adminId);
+      getData = await getIndividualFourPortalStaff(loggedInId, adminId);
         }
         if (getRole.role === "INDIVIDUAL" && getRole.type === portalType) {
             // console.log("run INDIVIDUAL")
@@ -46,7 +46,7 @@ export const getAllUsersForChat = async (req, res) => {
             status: false,
             body: null,
             message: "failed to get all hospital staff",
-            errorCode: "INTERNAL_SERVER_ERROR",
+      errorCode: "INTERNAL_SERVER_ERROR",
         });
     }
 }

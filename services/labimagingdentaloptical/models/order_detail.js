@@ -89,7 +89,7 @@ const orderDetailSchema = new mongoose.Schema(
             type: String,
             default: null
         },
-        order_schedule_confirm: {
+    order_schedule_confirm: {
             type: Boolean, default: false
             // 0 - false 1-true
         },

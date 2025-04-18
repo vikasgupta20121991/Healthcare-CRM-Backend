@@ -12,13 +12,13 @@ const assessmentSchema = new mongoose.Schema(
                 },
                 answer: {
                     type: Array,
-                    default:null
+          default: null,
                 },
             }
         ],
         appointmentId: {
             type: mongoose.Schema.Types.ObjectId,
-            require: true,
+      require: true,
             ref: "Appointment",
         },
     },

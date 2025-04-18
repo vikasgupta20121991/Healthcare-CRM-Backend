@@ -25,12 +25,12 @@ export const add_role = async (req, res) => {
     //         });
     //         return;
     //     }
-    // } catch (error) {
+  // } catch (error) {
     //     handleResponse(req, res, 500, {
     //         status: false,
     //         body: null,
     //         message: "Failed to check role existence",
-    //         errorCode: "INTERNAL_SERVER_ERROR",
+  //         errorCode: "INTERNAL_SERVER_ERROR",
     //     });
     //     return;
     // }

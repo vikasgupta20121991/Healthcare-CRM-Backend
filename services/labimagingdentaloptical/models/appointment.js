@@ -5,7 +5,7 @@ const appointmentSchema = new mongoose.Schema(
         loginId: {
             type: mongoose.Schema.Types.ObjectId,
             required: true,
-        },
+    },
         portalId: {
             type: mongoose.Schema.Types.ObjectId,
             required: true,
@@ -58,7 +58,7 @@ const appointmentSchema = new mongoose.Schema(
         ANSJSON: {
             type: String,
         },
-        templateJSON: {
+    templateJSON: {
             type: String,
         },
         patientId: {
@@ -106,7 +106,7 @@ const appointmentSchema = new mongoose.Schema(
                 type: String,
                 default: ""
             },
-            patientMobile: {
+      patientMobile: {
                 type: String,
                 default: ""
             },

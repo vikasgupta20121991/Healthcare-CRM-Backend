@@ -4,7 +4,7 @@ const SubscriberPlanHistorySchema = new mongoose.Schema(
     {
         health_plan_for: {
             type: mongoose.Schema.Types.ObjectId,
-            ref: "Plan",
+      ref: "Plan",
         },
         plan_validity_from: {
             type: String,

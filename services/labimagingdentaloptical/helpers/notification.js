@@ -22,7 +22,7 @@ export const notification =(async (creatorType,createdBy, notificationFor, toUse
     const data = requestData
     try {
         return new Promise((resolve, reject) => {
-            axios({
+      axios({
                 method: 'post',
                 url: `${baseurl}/${path}`,
                 data,

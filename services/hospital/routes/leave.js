@@ -10,7 +10,7 @@ leaveManagementRoute.post("/hospitalIds",hospitalIds);
 leaveManagementRoute.get("/particularhospitalleave-list",getAllParticularHospitalLeave);
 leaveManagementRoute.put("/leave-accept",LeaveAccept);
 leaveManagementRoute.put("/leave-reject",LeaveReject);
-leaveManagementRoute.get("/doctorstaffleave-list",getAllMyDoctorStaffLeave);
+leaveManagementRoute.get("/doctorstaffleave-list", getAllMyDoctorStaffLeave);
 
 leaveManagementRoute.get("/staffallleave-list",getAllMyStaffLeaves);
 leaveManagementRoute.put("/staffleave-accept",StaffLeaveAccept);

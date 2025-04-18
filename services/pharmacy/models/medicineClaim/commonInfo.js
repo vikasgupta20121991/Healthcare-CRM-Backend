@@ -4,7 +4,7 @@ const mediClaimCommonInfoSchema = new mongoose.Schema(
     {
         patientId: {
             type: String,
-        },
+    },
         ePrescriptionNumber: {
             type: String,
         },
@@ -55,7 +55,7 @@ const mediClaimCommonInfoSchema = new mongoose.Schema(
             required: true,
             unique: true
         },
-        service: {
+    service: {
             type: String,
         },
         previewtemplate: {

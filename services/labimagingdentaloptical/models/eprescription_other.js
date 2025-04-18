@@ -18,7 +18,7 @@ const eprescriptionOtherSchema = new mongoose.Schema(
         other_name: {
             type: String
         },
-        reason_for_other: {
+    reason_for_other: {
             type: String
         },
         relevant_clinical_information: {

@@ -28,7 +28,7 @@ class StaffController {
             staff_name,
             first_name,
             middle_name,
-            last_name,
+      last_name,
             dob,
             language,
             addressInfo,

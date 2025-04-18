@@ -16,7 +16,7 @@ export const verifyToken = async (req, res, next) => {
         token = token.split('Bearer ')[1];
         let jwtSecretKey = SECRET.JWT;
         const decode = jwt.verify(token, jwtSecretKey);
-        // if(decode.data.role !== role) return sendResponse(req, res, messageID.unAuthorizedUser, {
+    // if(decode.data.role !== role) return sendResponse(req, res, messageID.unAuthorizedUser, {
         //     status: false,
         //     body: null,
         //     message: messages.invalidToken,
